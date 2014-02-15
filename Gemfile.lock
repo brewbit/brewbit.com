@@ -20,6 +20,12 @@ GIT
       savon (~> 1.2)
       spree_core (~> 2.1)
 
+PATH
+  remote: ../spree_theme
+  specs:
+    spree_theme (2.1.4)
+      spree_core (~> 2.1.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -298,6 +304,7 @@ DEPENDENCIES
   spree (= 2.1.4)
   spree_auth_devise!
   spree_gateway!
+  spree_theme!
   sqlite3
   therubyracer
   turbolinks
