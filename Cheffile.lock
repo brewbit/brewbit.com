@@ -1,0 +1,62 @@
+SITE
+  remote: http://community.opscode.com/api/v1
+  specs:
+    apt (2.3.4)
+    build-essential (1.4.2)
+    chef_gem (0.1.0)
+
+GIT
+  remote: https://github.com/bmhatfield/chef-ulimit
+  ref: master
+  sha: 9bd1dec9f15b2d378181a70bc8905a03f60bd471
+  specs:
+    ulimit (0.3.2)
+
+GIT
+  remote: https://github.com/deepak/chef-locale
+  ref: 2669bd937f589b6ad542da4eb1baa42cfe251030
+  sha: 2669bd937f589b6ad542da4eb1baa42cfe251030
+  specs:
+    locale (0.0.2)
+
+GIT
+  remote: https://github.com/fnichol/chef-rvm
+  ref: master
+  sha: 0cd320911c1e568cbf2eeac895a5ef06e5821589
+  specs:
+    rvm (0.9.1)
+      chef_gem (>= 0.0.0)
+
+GIT
+  remote: https://github.com/phlipper/chef-cmake
+  ref: master
+  sha: 0121931a7246cd56679ebfb73090c90ecc44a3af
+  specs:
+    cmake (0.2.0)
+
+GIT
+  remote: https://github.com/phlipper/chef-libqt4
+  ref: master
+  sha: 3bec9de4a0693ed4281a186063268dd3fe6f00c4
+  specs:
+    libqt4 (0.1.0)
+      cmake (>= 0.0.0)
+
+GIT
+  remote: https://github.com/phlipper/chef-postgresql
+  ref: master
+  sha: 2c412e2f1aebce50d84fe13a3d9c6c544004fad6
+  specs:
+    postgresql (0.13.0)
+      apt (>= 1.9.0)
+
+DEPENDENCIES
+  apt (>= 0)
+  build-essential (>= 0)
+  cmake (>= 0)
+  libqt4 (>= 0)
+  locale (>= 0)
+  postgresql (>= 0)
+  rvm (>= 0)
+  ulimit (>= 0)
+
