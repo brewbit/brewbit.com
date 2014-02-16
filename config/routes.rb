@@ -1,5 +1,7 @@
 BrewbitSpree::Application.routes.draw do
 
+  post '/mailinglist/subscribe', to: 'mailinglist#subscribe'
+
   # This line mounts Spree's routes at the root of your application.
   # This means, any requests to URLs such as /products, will go to Spree::ProductsController.
   # If you would like to change where this engine is mounted, simply change the :at option to something different.
@@ -8,7 +10,7 @@ BrewbitSpree::Application.routes.draw do
   mount Spree::Core::Engine, :at => '/'
           # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
+  
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
