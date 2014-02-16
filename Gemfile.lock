@@ -21,13 +21,13 @@ GIT
       spree_core (~> 2.1)
 
 PATH
-  remote: ../spree_theme
+  remote: ./spree_theme
   specs:
     spree_theme (2.1.4)
       spree_core (~> 2.1.4)
 
 PATH
-  remote: ../spree_tumblr
+  remote: ./spree_tumblr
   specs:
     spree_tumblr (2.1.4)
       spree_core (~> 2.1.4)
