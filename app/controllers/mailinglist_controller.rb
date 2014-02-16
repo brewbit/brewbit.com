@@ -11,6 +11,6 @@ class MailinglistController < ActionController::Base
       flash.notice = e.message
     end
     
-    redirect_to '/'
+    redirect_to :back
   end
 end
