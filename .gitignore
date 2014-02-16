@@ -16,3 +16,5 @@
 /tmp
 /cookbooks
 /.vagrant
+/spree_theme
+/spree_tumblr
