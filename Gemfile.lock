@@ -1,4 +1,18 @@
 GIT
+  remote: https://github.com/brewbit/spree_brewbit.git
+  revision: 021a7a30e27baf14a8b6cf3d6d4ca41d7dc0e708
+  specs:
+    spree_brewbit (2.1.4)
+      spree_core (~> 2.1.4)
+
+GIT
+  remote: https://github.com/brewbit/spree_tumblr.git
+  revision: e3ae7f78e98d3d5c4daa2cc63a497e91e2071702
+  specs:
+    spree_tumblr (2.1.4)
+      spree_core (~> 2.1.4)
+
+GIT
   remote: https://github.com/spree/spree_auth_devise.git
   revision: f6f91480655b8bd0179ba29a7fef917e8d20e101
   branch: 2-1-stable
@@ -19,18 +33,6 @@ GIT
     spree_gateway (2.1.0.beta)
       savon (~> 1.2)
       spree_core (~> 2.1)
-
-PATH
-  remote: ./spree_theme
-  specs:
-    spree_theme (2.1.4)
-      spree_core (~> 2.1.4)
-
-PATH
-  remote: ./spree_tumblr
-  specs:
-    spree_tumblr (2.1.4)
-      spree_core (~> 2.1.4)
 
 GEM
   remote: https://rubygems.org/
@@ -314,8 +316,8 @@ DEPENDENCIES
   sdoc
   spree (= 2.1.4)
   spree_auth_devise!
+  spree_brewbit!
   spree_gateway!
-  spree_theme!
   spree_tumblr!
   therubyracer
   turbolinks

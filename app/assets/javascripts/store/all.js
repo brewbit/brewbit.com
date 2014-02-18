@@ -10,4 +10,4 @@
 //= require store/spree_frontend
 
 //= require_tree .
-//= require store/spree_theme
+//= require store/spree_brewbit
