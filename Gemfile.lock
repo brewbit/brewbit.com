@@ -1,11 +1,4 @@
 GIT
-  remote: https://github.com/brewbit/spree_brewbit.git
-  revision: 021a7a30e27baf14a8b6cf3d6d4ca41d7dc0e708
-  specs:
-    spree_brewbit (2.1.4)
-      spree_core (~> 2.1.4)
-
-GIT
   remote: https://github.com/brewbit/spree_tumblr.git
   revision: e3ae7f78e98d3d5c4daa2cc63a497e91e2071702
   specs:
@@ -33,6 +26,12 @@ GIT
     spree_gateway (2.1.0.beta)
       savon (~> 1.2)
       spree_core (~> 2.1)
+
+PATH
+  remote: ../spree_brewbit
+  specs:
+    spree_brewbit (2.1.4)
+      spree_core (~> 2.1.4)
 
 GEM
   remote: https://rubygems.org/
@@ -124,7 +123,7 @@ GEM
       builder (>= 2.1.2)
     highline (1.6.20)
     hike (1.2.3)
-    httparty (0.12.0)
+    httparty (0.13.0)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
     httpi (1.1.1)
@@ -170,7 +169,7 @@ GEM
     pg (0.17.1)
     polyamorous (0.6.4)
       activerecord (>= 3.0)
-    polyglot (0.3.3)
+    polyglot (0.3.4)
     rabl (0.8.4)
       activesupport (>= 2.3.14)
     rack (1.5.2)

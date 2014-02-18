@@ -30,7 +30,11 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+# Gibbon is an API wrapper for MailChimp's API https://github.com/amro/gibbon
 gem 'gibbon'
+
+# A very fast & simple Ruby web server http://code.macournoyer.com/thin/
+gem 'thin'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
