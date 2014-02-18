@@ -36,6 +36,7 @@ Vagrant.configure('2') do |config|
 
     chef.add_recipe 'cmake'
     chef.add_recipe 'libqt4'
+    chef.add_recipe 'imagemagick'
 
     chef.add_recipe 'rvm::vagrant'
     chef.add_recipe 'rvm::system'
