@@ -1,6 +1,11 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+begin
+  require 'dotenv'
+  Dotenv.load '.env'
+rescue LoadError; end
+
 Vagrant.configure('2') do |config|
   config.omnibus.chef_version = :latest
 

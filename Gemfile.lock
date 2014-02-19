@@ -115,6 +115,9 @@ GEM
       warden (~> 1.2.3)
     devise-encryptable (0.1.2)
       devise (>= 2.1.0)
+    dotenv (0.9.0)
+    dotenv-rails (0.9.0)
+      dotenv (= 0.9.0)
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.0.2)
@@ -313,6 +316,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  dotenv-rails
   gibbon
   jbuilder (~> 1.2)
   jquery-rails (~> 3.0.0)

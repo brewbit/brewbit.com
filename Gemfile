@@ -36,6 +36,9 @@ gem 'gibbon'
 # A very fast & simple Ruby web server http://code.macournoyer.com/thin/
 gem 'thin'
 
+# Loads environment variables from `.env`. https://github.com/bkeepers/dotenv
+gem 'dotenv-rails'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
