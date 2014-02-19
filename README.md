@@ -2,11 +2,22 @@
 
 # Developmpent
 
+* Create a .env file with the following items:
+```
+DIGITAL_OCEAN_CLIENT_ID=<snip>
+DIGITAL_OCEAN_API_KEY=<snip>
+MAILCHIMP_API_KEY=<snip>
+MAILCHIMP_LIST_ID=<snip>
+TUMBLR_API_KEY=<snip>
+TUMBLR_POST_URL=http://api.tumblr.com/v2/blog/brewbit.tumblr.com/posts/text
+```
+
 ## Vagrant
 
 * Install [Vagrant](http://www.vagrantup.com/)
 * Install dependenices
 ```bash
+vagrant plugin install vagrant-digitalocean
 vagrant plugin install vagrant-librarian-chef
 vagrant plugin install vagrant-omnibus
 ```
