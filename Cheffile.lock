@@ -28,6 +28,13 @@ GIT
       chef_gem (>= 0.0.0)
 
 GIT
+  remote: https://github.com/opscode-cookbooks/imagemagick
+  ref: master
+  sha: e80c1ca66b0a905cbb6096ee1e5fa19911067208
+  specs:
+    imagemagick (0.2.2)
+
+GIT
   remote: https://github.com/phlipper/chef-cmake
   ref: master
   sha: 0121931a7246cd56679ebfb73090c90ecc44a3af
@@ -54,6 +61,7 @@ DEPENDENCIES
   apt (>= 0)
   build-essential (>= 0)
   cmake (>= 0)
+  imagemagick (>= 0)
   libqt4 (>= 0)
   locale (>= 0)
   postgresql (>= 0)

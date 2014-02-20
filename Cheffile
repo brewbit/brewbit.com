@@ -8,6 +8,7 @@ cookbook 'apt'
 cookbook 'build-essential'
 cookbook 'cmake', git: 'https://github.com/phlipper/chef-cmake'
 cookbook 'libqt4', git: 'https://github.com/phlipper/chef-libqt4'
+cookbook 'imagemagick', git: 'https://github.com/opscode-cookbooks/imagemagick'
 
 cookbook 'postgresql', git: 'https://github.com/phlipper/chef-postgresql'
 
