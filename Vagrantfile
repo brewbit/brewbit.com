@@ -60,7 +60,7 @@ Vagrant.configure('2') do |config|
           {'name'    => 'pry' }
         ],
         'vagrant' => {
-          'system_chef_solo' => '/opt/vagrant_ruby/bin/chef-solo'
+          'system_chef_solo' => '/opt/chef/bin/chef-solo'
         },
         'group_users' => ['vagrant'],
       },
