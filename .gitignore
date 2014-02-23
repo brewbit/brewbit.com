@@ -6,14 +6,11 @@
 
 # Ignore bundler config.
 /.bundle
-
 # Ignore .env file
 /.env
-
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
-
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
@@ -21,3 +18,5 @@
 /.vagrant
 /spree_brewbit
 /spree_tumblr
+/cookbooks/
+/tmp/librarian/

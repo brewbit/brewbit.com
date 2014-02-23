@@ -14,6 +14,8 @@ TUMBLR_POST_URL=http://api.tumblr.com/v2/blog/brewbit.tumblr.com/posts/text
 
 ## Vagrant
 
+* Install the brewbit.com SSL key and certificate to /etc/ssl/private/brewbit.com.key and /etc/ssl/certs/brewbit.com.crt
+* Install the DigitalOcean SSH keys to ~/.ssh/brewbit and ~/.ssh/brewbit.pub
 * Install [Vagrant](http://www.vagrantup.com/)
 * Install dependenices
 ```bash
@@ -46,5 +48,5 @@ rake spree_auth:admin:create
 foreman start
 ```
 
-Server is now accessible on `http://localhost:3000`
+Server is now accessible on `http://<droplet_ip>:3000`
 

@@ -20,7 +20,7 @@ Vagrant.configure('2') do |config|
   config.vm.provider :digital_ocean do |provider, override|
     provider.client_id = ENV['DIGITAL_OCEAN_CLIENT_ID']
     provider.api_key = ENV['DIGITAL_OCEAN_API_KEY']
-    provider.image = 'Ubuntu 13.10 x64'
+    provider.image = 'Ubuntu 13.04 x64'
     provider.region = 'San Francisco 1'
     provider.size = '512MB'
     provider.private_networking = false
@@ -31,20 +31,21 @@ Vagrant.configure('2') do |config|
 
   config.vm.provision :chef_solo do |chef|
 
+    chef.cookbooks_path = ['cookbooks', 'site-cookbooks']
+    chef.data_bags_path = 'data_bags'
+    chef.encrypted_data_bag_secret_key_path = "#{ENV['HOME']}/.chef/encrypted_data_bag_secret"
+    
     chef.add_recipe 'locale'
-
     chef.add_recipe 'apt'
     chef.add_recipe 'build-essential'
-
     chef.add_recipe 'postgresql::server'
     chef.add_recipe 'postgresql::libpq'
-
     chef.add_recipe 'cmake'
     chef.add_recipe 'libqt4'
     chef.add_recipe 'imagemagick'
-
     chef.add_recipe 'rvm::vagrant'
     chef.add_recipe 'rvm::system'
+    chef.add_recipe 'brewbit'
 
     chef.json = {
       'locale' => {

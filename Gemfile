@@ -44,6 +44,15 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+# knife-solo adds a handful of Knife commands that aim to make working with chef-solo as powerful as chef-server.
+gem 'knife-solo', group: :development
+
+# A knife plugin to make working with data bags easier in a chef solo environment.
+gem 'knife-solo_data_bag', group: :development
+
+# Librarian-Chef is a bundler for your Chef-based infrastructure repositories.
+gem 'librarian-chef', group: :development
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
@@ -60,4 +69,4 @@ gem 'spree', '2.1.4'
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-1-stable'
 gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '2-1-stable'
 gem 'spree_brewbit', :git => 'https://github.com/brewbit/spree_brewbit.git'
-gem 'spree_tumblr', :git => 'https://github.com/brewbit/spree_tumblr.git'
+gem 'spree_tumblr', :path => '../spree_tumblr'
