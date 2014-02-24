@@ -6,16 +6,12 @@
 ```
 DIGITAL_OCEAN_CLIENT_ID=<snip>
 DIGITAL_OCEAN_API_KEY=<snip>
-MAILCHIMP_API_KEY=<snip>
-MAILCHIMP_LIST_ID=<snip>
-TUMBLR_API_KEY=<snip>
-TUMBLR_POST_URL=http://api.tumblr.com/v2/blog/brewbit.tumblr.com/posts/text
 ```
 
 ## Vagrant
 
-* Install the brewbit.com SSL key and certificate to /etc/ssl/private/brewbit.com.key and /etc/ssl/certs/brewbit.com.crt
 * Install the DigitalOcean SSH keys to ~/.ssh/brewbit and ~/.ssh/brewbit.pub
+* Install the Chef encrypted data bag key to ~/.chef/encrypted_data_bag_secret
 * Install [Vagrant](http://www.vagrantup.com/)
 * Install dependenices
 ```bash
