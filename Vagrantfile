@@ -35,6 +35,7 @@ Vagrant.configure('2') do |config|
     chef.data_bags_path = 'data_bags'
     chef.encrypted_data_bag_secret_key_path = "#{ENV['HOME']}/.chef/encrypted_data_bag_secret"
 
+    chef.add_recipe 'chef-solo-search'
     chef.add_recipe 'users'
     chef.add_recipe 'locale'
     chef.add_recipe 'apt'
