@@ -2,7 +2,7 @@
 tumblr = Chef::EncryptedDataBagItem.load("secrets", "tumblr")
 mailchimp = Chef::EncryptedDataBagItem.load("secrets", "mailchimp")
 
-template ".env" do
+template "/vagrant/.env" do
   source "env.erb"
   mode 0640
   owner "root"
