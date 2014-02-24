@@ -41,7 +41,7 @@ rake spree_auth:admin:create
 ```
 * Start the servers
 ```bash
-foreman start
+thin start
 ```
 
 Server is now accessible on `http://<droplet_ip>:3000`

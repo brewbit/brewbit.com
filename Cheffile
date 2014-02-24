@@ -16,4 +16,5 @@ cookbook 'ulimit', git: 'https://github.com/bmhatfield/chef-ulimit'
 
 cookbook 'rvm', git: 'https://github.com/fnichol/chef-rvm'
 
-
+cookbook 'chef-solo-search', git: 'https://github.com/edelight/chef-solo-search'
+cookbook 'users', git: 'https://github.com/opscode-cookbooks/users'

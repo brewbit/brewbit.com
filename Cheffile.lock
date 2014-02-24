@@ -20,6 +20,13 @@ GIT
     locale (0.0.2)
 
 GIT
+  remote: https://github.com/edelight/chef-solo-search
+  ref: master
+  sha: 848e98fcab3f87f030a631bf092a236e39cf1cc0
+  specs:
+    chef-solo-search (0.5.1)
+
+GIT
   remote: https://github.com/fnichol/chef-rvm
   ref: master
   sha: 0cd320911c1e568cbf2eeac895a5ef06e5821589
@@ -33,6 +40,13 @@ GIT
   sha: e80c1ca66b0a905cbb6096ee1e5fa19911067208
   specs:
     imagemagick (0.2.2)
+
+GIT
+  remote: https://github.com/opscode-cookbooks/users
+  ref: master
+  sha: 5bcba8ae69690e32413b45fca7128581e6865c3e
+  specs:
+    users (1.7.1)
 
 GIT
   remote: https://github.com/phlipper/chef-cmake
@@ -60,6 +74,7 @@ GIT
 DEPENDENCIES
   apt (>= 0)
   build-essential (>= 0)
+  chef-solo-search (>= 0)
   cmake (>= 0)
   imagemagick (>= 0)
   libqt4 (>= 0)
@@ -67,4 +82,5 @@ DEPENDENCIES
   postgresql (>= 0)
   rvm (>= 0)
   ulimit (>= 0)
+  users (>= 0)
 

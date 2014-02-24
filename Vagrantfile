@@ -34,7 +34,8 @@ Vagrant.configure('2') do |config|
     chef.cookbooks_path = ['cookbooks', 'site-cookbooks']
     chef.data_bags_path = 'data_bags'
     chef.encrypted_data_bag_secret_key_path = "#{ENV['HOME']}/.chef/encrypted_data_bag_secret"
-    
+
+    chef.add_recipe 'users'
     chef.add_recipe 'locale'
     chef.add_recipe 'apt'
     chef.add_recipe 'build-essential'

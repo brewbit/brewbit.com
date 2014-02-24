@@ -1,15 +1,33 @@
-# Decrypt 3rd party service API keys
-tumblr = Chef::EncryptedDataBagItem.load("secrets", "tumblr")
-mailchimp = Chef::EncryptedDataBagItem.load("secrets", "mailchimp")
+# Create the deploy user/group
+users_manage "deploy" do
+  action :create
+end
 
+# Create the application deployment directory
+directory "/var/www/brewbit" do
+  owner "deploy"
+  group "deploy"
+  mode 02700
+  recursive true
+end
+
+%w[ /var/www/brewbit/releases /var/www/brewbit/shared ].each do |path|
+  directory path do
+    owner "deploy"
+    group "deploy"
+    mode 02775
+  end
+end
+
+# Create the dotenv file containing secrets
 template "/vagrant/.env" do
   source "env.erb"
   mode 0640
   owner "root"
   group "root"
   variables({
-     :tumblr => tumblr,
-     :mailchimp => mailchimp
+     :tumblr => Chef::EncryptedDataBagItem.load("secrets", "tumblr"),
+     :mailchimp => Chef::EncryptedDataBagItem.load("secrets", "mailchimp")
   })
 end
 
