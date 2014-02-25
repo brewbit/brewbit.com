@@ -11,7 +11,7 @@ set :repo_url, 'git@github.com:brewbit/brewbit-spree.git'
 set :deploy_to, "/var/www/brewbit.com"
 
 # Default value for :scm is :git
-# set :scm, :git
+set :scm, :git
 
 # Default value for :format is :pretty
 # set :format, :pretty
@@ -29,7 +29,7 @@ set :deploy_to, "/var/www/brewbit.com"
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 # Default value for default_env is {}
-# set :default_env, { path: "/opt/ruby/bin:$PATH" }
+set :default_env, { rails_env: 'production' }
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
@@ -39,8 +39,7 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      # Your restart mechanism here, for example:
-      # execute :touch, release_path.join('tmp/restart.txt')
+      execute :kill, "-s USR2 `cat /tmp/unicorn.brewbit.com.pid`"
     end
   end
 
@@ -48,10 +47,9 @@ namespace :deploy do
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
+      within release_path do
+        execute :rake, 'cache:clear'
+      end
     end
   end
 

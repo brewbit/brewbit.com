@@ -33,8 +33,8 @@ gem 'jbuilder', '~> 1.2'
 # Gibbon is an API wrapper for MailChimp's API https://github.com/amro/gibbon
 gem 'gibbon'
 
-# A very fast & simple Ruby web server http://code.macournoyer.com/thin/
-gem 'thin'
+# Rack HTTP server for fast clients and Unix http://unicorn.bogomips.org/
+gem 'unicorn'
 
 # Loads environment variables from `.env`. https://github.com/bkeepers/dotenv
 gem 'dotenv-rails'
