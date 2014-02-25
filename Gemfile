@@ -55,6 +55,8 @@ gem 'librarian-chef', group: :development
 
 # Use Capistrano for deployment
 gem 'capistrano', group: :development
+gem 'capistrano-rvm', group: :development
+gem 'capistrano-bundler', group: :development
 
 # Spree web store
 gem 'spree', '2.1.4'

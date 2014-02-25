@@ -1,17 +1,17 @@
 # Create the deploy user/group
-users_manage "deploy" do
+users_manage "rvm" do
   action :create
 end
 
 # Create the application deployment directory
-directory "/var/www/brewbit" do
+directory "/var/www/brewbit.com" do
   owner "deploy"
   group "deploy"
   mode 02700
   recursive true
 end
 
-%w[ /var/www/brewbit/releases /var/www/brewbit/shared ].each do |path|
+%w[ /var/www/brewbit.com/releases /var/www/brewbit.com/shared ].each do |path|
   directory path do
     owner "deploy"
     group "deploy"

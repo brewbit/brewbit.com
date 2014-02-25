@@ -1,10 +1,10 @@
 {
-  "name": "data_bag_item_users_deploy",
+  "name": "data_bag_item_users_vagrant",
   "json_class": "Chef::DataBagItem",
   "chef_type": "data_bag_item",
   "data_bag": "users",
   "raw_data": {
-    "id": "deploy",
+    "id": "vagrant",
     "groups": [
       "rvm"
     ],

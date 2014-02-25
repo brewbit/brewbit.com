@@ -1,14 +1,14 @@
 # config valid only for Capistrano 3.1
 lock '3.1.0'
 
-set :application, 'brewbit'
+set :application, 'brewbit.com'
 set :repo_url, 'git@github.com:brewbit/brewbit-spree.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, "/var/www/brewbit"
+set :deploy_to, "/var/www/brewbit.com"
 
 # Default value for :scm is :git
 # set :scm, :git
