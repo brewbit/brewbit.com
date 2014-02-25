@@ -19,6 +19,12 @@ test:
 
 staging:
   <<: *psql
-  database: brewbit_staging
+  database: brewbit_production
+  username: brewbit
+  password: brewbit
+
+production:
+  <<: *psql
+  database: brewbit_production
   username: brewbit
   password: brewbit
