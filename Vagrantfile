@@ -85,6 +85,15 @@ Vagrant.configure('2') do |config|
             'createdb' => true,
             'login' => true
           }
+        ],
+        "databases" => [
+          {
+            "name" => "brewbit_production",
+            "owner" => "brewbit",
+            "template" => "template0",
+            "encoding" => "utf8",
+            "locale" => "en_US.UTF8"
+          }
         ]
       }
     }
