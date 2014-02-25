@@ -58,7 +58,7 @@ Vagrant.configure('2') do |config|
         'rubies'       => ['2.1.0'],
         'default_ruby' => '2.1.0',
         'global_gems'  => [
-          {'name'    => 'bundler'},
+          {'name'    => 'bundler', 'version' => '1.5.3'},
           {'name'    => 'rake', 'version' => '10.1.0'},
           {'name'    => 'pry' }
         ],
