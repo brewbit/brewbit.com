@@ -38,9 +38,9 @@ namespace :deploy do
 
   desc 'Restart application'
   task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      execute :kill, "-s USR2 `cat /tmp/unicorn.brewbit.com.pid`"
-    end
+    # on roles(:app), in: :sequence, wait: 5 do
+      # execute :kill, "-s USR2 `cat /tmp/unicorn.brewbit.com.pid`"
+    # end
   end
 
   after :publishing, :restart
