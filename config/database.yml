@@ -16,3 +16,9 @@ test:
   database: brewbit_test
   username: brewbit
   password: brewbit
+
+staging:
+  <<: *psql
+  database: brewbit_staging
+  username: brewbit
+  password: brewbit
