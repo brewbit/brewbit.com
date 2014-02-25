@@ -34,23 +34,3 @@ set :default_env, { rails_env: 'production' }
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-namespace :deploy do
-
-  desc 'Restart application'
-  task :restart do
-    # on roles(:app), in: :sequence, wait: 5 do
-      # execute :kill, "-s USR2 `cat /tmp/unicorn.brewbit.com.pid`"
-    # end
-  end
-
-  after :publishing, :restart
-
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      within release_path do
-        execute :rake, 'cache:clear'
-      end
-    end
-  end
-
-end
