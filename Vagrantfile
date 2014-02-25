@@ -45,6 +45,7 @@ Vagrant.configure('2') do |config|
     chef.add_recipe 'cmake'
     chef.add_recipe 'libqt4'
     chef.add_recipe 'imagemagick'
+    chef.add_recipe 'nginx'
     chef.add_recipe 'rvm::vagrant'
     chef.add_recipe 'rvm::system'
     chef.add_recipe 'brewbit'
@@ -95,6 +96,29 @@ Vagrant.configure('2') do |config|
             "locale" => "en_US.UTF8"
           }
         ]
+      },
+      "nginx" => {
+        "user" => "deploy",
+        "worker_processes" => 3,
+        "pid" => "/var/run/nginx.pid",
+        "worker_connections" => 1024,
+        "multi_accept" => "on",
+        "types_hash_bucket_size" => 512,
+        "types_hash_max_size" => 2048,
+
+        "sendfile" => "on",
+        # "tcp_nopush" => on,
+        # "tcp_nodelay" => off,
+
+        "log_dir" => "/var/log/nginx",
+
+        "gzip" => "on",
+        "gzip_disable" => "msie6",
+
+        "gzip_proxied" => "any",
+        "gzip_min_length" => 500,
+        "gzip_types" => [ "text/plain", "text/css", "application/json", "application/x-javascript",
+                          "text/xml", "application/xml", "application/xml+rss", "text/javascript" ],
       }
     }
   end

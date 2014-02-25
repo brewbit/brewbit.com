@@ -48,3 +48,7 @@ file "/etc/ssl/private/brewbit.com.key" do
   content ssl['key']
 end
 
+cookbook_file "nginx__sites-enabled__brewbit.com" do
+  path "/etc/nginx/sites-enabled/brewbit.com"
+  action [ :delete, :create ]
+end
