@@ -27,11 +27,11 @@ directory "/var/log/brewbit.com" do
 end
 
 # Create the dotenv file containing secrets
-template "/vagrant/.env" do
+template "/var/www/brewbit.com/shared/.env" do
   source "env.erb"
   mode 0640
-  owner "root"
-  group "root"
+  owner "deploy"
+  group "deploy"
   variables({
      :tumblr => Chef::EncryptedDataBagItem.load("secrets", "tumblr"),
      :mailchimp => Chef::EncryptedDataBagItem.load("secrets", "mailchimp")
