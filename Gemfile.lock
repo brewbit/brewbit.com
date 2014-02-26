@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:brewbit/spree_brewbit.git
-  revision: 533dd737046c3b180bb377144a79bb676741de3d
+  revision: 09799584db43f10f46d4915e08414e92e1ad727f
   specs:
     spree_brewbit (2.1.4)
       spree_core (~> 2.1.4)
@@ -49,7 +49,7 @@ GEM
     active_utils (2.0.2)
       activesupport (>= 2.3.11)
       i18n
-    activemerchant (1.42.5)
+    activemerchant (1.42.6)
       active_utils (~> 2.0, >= 2.0.1)
       activesupport (>= 2.3.14, < 5.0.0)
       builder (>= 2.1.2, < 4.0.0)
