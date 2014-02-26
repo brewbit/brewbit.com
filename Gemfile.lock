@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:brewbit/spree_brewbit.git
-  revision: 9757d8f02cb911a513615e49fb5fac9af52ddc25
+  revision: 9d617495ca04b6da49dfb501fd6158e47f055128
   specs:
     spree_brewbit (2.1.4)
       spree_core (~> 2.1.4)
