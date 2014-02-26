@@ -1,4 +1,4 @@
-upstream brewbit.com {
+	upstream brewbit.com {
   # fail_timeout=0 means we always retry an upstream even if it failed
   # to return a good HTTP response (in case the Unicorn master nukes a
   # single worker for timing out).
@@ -9,6 +9,10 @@ server {
   # if you're running multiple servers, instead of "default" you should
   # put your main domain name here
   listen 80 default;
+  listen 443 ssl;
+
+  ssl_certificate /etc/ssl/certs/brewbit.com.crt;
+  ssl_certificate_key /etc/ssl/private/brewbit.com.key;
 
   # you could put a list of other domain names this application answers
   server_name brewbit.com;
