@@ -19,6 +19,13 @@ end
   end
 end
 
+directory "/var/log/brewbit.com" do
+  owner "deploy"
+  group "deploy"
+  mode 02775
+  recursive true
+end
+
 # Create the dotenv file containing secrets
 template "/vagrant/.env" do
   source "env.erb"

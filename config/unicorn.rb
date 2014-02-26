@@ -24,10 +24,10 @@ if env == "production"
   working_directory "/var/www/brewbit.com/current"
 
   # feel free to point this anywhere accessible on the filesystem user 'spree'
-  shared_path = "/var/www/brewbit.com/shared"
+  shared_path = "/var/log/brewbit.com"
 
-  stderr_path "#{shared_path}/log/unicorn.stderr.log"
-  stdout_path "#{shared_path}/log/unicorn.stdout.log"
+  stderr_path "#{shared_path}/unicorn.stderr.log"
+  stdout_path "#{shared_path}/unicorn.stdout.log"
 end
 
 before_fork do |server, worker|
