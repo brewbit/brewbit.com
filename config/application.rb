@@ -34,10 +34,5 @@ module BrewbitSpree
     # config.i18n.default_locale = :de
     
     I18n.enforce_available_locales = false
-    
-    # load secrets from encrypted data bags
-    # SpreeTumblr::Config.blog_name = 'brewbit'
-    # SpreeTumblr::Config.api_key = Chef::EncryptedDataBagItem.load("secrets", "tumblr")["api_key"]
-    
   end
 end
