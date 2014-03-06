@@ -6,7 +6,7 @@ Vagrant.configure('2') do |config|
 
   config.vm.define :brewbit do |brewbit|
     brewbit.ssh.username = 'vagrant'
-    brewbit.vm.hostname = 'brewbit'
+    brewbit.vm.hostname = 'brewbit.com'
     brewbit.vm.box = 'digital_ocean'
     brewbit.vm.box_url = "https://github.com/smdahlen/vagrant-digitalocean/raw/master/box/digital_ocean.box"
     brewbit.ssh.private_key_path = '~/.ssh/brewbit'
