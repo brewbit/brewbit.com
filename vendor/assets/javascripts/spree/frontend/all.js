@@ -7,7 +7,7 @@
 //= require jquery
 //= require jquery_ujs
 
-//= require store/spree_frontend
+//= require spree/frontend
 
 //= require_tree .
-//= require store/spree_brewbit
+//= require spree/frontend/spree_brewbit

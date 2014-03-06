@@ -1,6 +1,7 @@
 GIT
   remote: git@github.com:brewbit/spree_brewbit.git
-  revision: 69bfdbbe8eeec55497e7a1565879be1e0d963652
+  revision: caa21332e403306d5cf1b315359f8c983532ed83
+  branch: master
   specs:
     spree_brewbit (2.2.0)
       spree_core (~> 2.2.0)
@@ -8,6 +9,7 @@ GIT
 GIT
   remote: git@github.com:brewbit/spree_tumblr.git
   revision: 2e9acac0dbc9f851e2a99b99fabd35e67ad48acc
+  branch: master
   specs:
     spree_tumblr (2.2.0)
       spree_core (~> 2.2.0)
