@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 #ruby-gemset=brewbit-spree
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.2'
+gem 'rails', '4.0.3'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -22,7 +22,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails', '~> 3.0.0'
+gem 'jquery-rails', '~> 3.1.0'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -60,8 +60,8 @@ gem 'capistrano-bundler', group: :development
 gem 'capistrano-rails', group: :development
 
 # Spree web store
-gem 'spree', '2.1.4'
-gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-1-stable'
-gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '2-1-stable'
+gem 'spree', '2.2.0'
+gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-2-stable'
+gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '2-2-stable'
 gem 'spree_brewbit', :git => 'git@github.com:brewbit/spree_brewbit.git'
 gem 'spree_tumblr', :git => 'git@github.com:brewbit/spree_tumblr.git'
