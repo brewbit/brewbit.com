@@ -34,7 +34,8 @@ template "/var/www/brewbit.com/shared/.env" do
   group "deploy"
   variables({
      :tumblr => Chef::EncryptedDataBagItem.load("secrets", "tumblr"),
-     :mailchimp => Chef::EncryptedDataBagItem.load("secrets", "mailchimp")
+     :mailchimp => Chef::EncryptedDataBagItem.load("secrets", "mailchimp"),
+     :aws => Chef::EncryptedDataBagItem.load("secrets", "aws")
   })
 end
 
