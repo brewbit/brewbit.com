@@ -1,0 +1,4 @@
+<!-- insert_after '#home-link' -->
+<li id="shop-link"><%= link_to Spree.t(:store), spree.products_path %></li>
+<li id="shop-link"><%= link_to 'Blog', spree.blog_path %></li>
+<li id="shop-link"><%= link_to 'Contact', 'mailto:brewbit@brewbit.com' %></li>
