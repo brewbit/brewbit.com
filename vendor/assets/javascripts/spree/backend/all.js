@@ -11,3 +11,4 @@
 
 //= require_tree .
 //= require spree/backend/spree_brewbit
+//= require spree/backend/spree_brewbit_dashboard
