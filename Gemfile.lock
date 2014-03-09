@@ -38,6 +38,12 @@ GIT
       savon (~> 1.2)
       spree_core (~> 2.2.0)
 
+PATH
+  remote: engines/spree_brewbit_dashboard
+  specs:
+    spree_brewbit_dashboard (2.2.0)
+      spree_core (~> 2.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -440,6 +446,7 @@ DEPENDENCIES
   spree (= 2.2.0)
   spree_auth_devise!
   spree_brewbit!
+  spree_brewbit_dashboard!
   spree_gateway!
   spree_tumblr!
   therubyracer
