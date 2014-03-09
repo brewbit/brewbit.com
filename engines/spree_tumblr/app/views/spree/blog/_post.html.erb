@@ -1,0 +1,15 @@
+<div class="blog-post">
+  <div>
+    <h2>
+      <% if controller.action_name == "show" -%>
+        <%= post["title"] %>
+      <% else -%>
+        <a href="/blog/<%= post["id"] %>/<%= post["post_url"].split(/\//).last %>"><%= post["title"] %></a>
+      <% end %>
+    </h2>
+  </div>
+  <div>
+    <h4><%= Date.parse(post["date"]).strftime( "%m-%d-%Y" ) %></h4>
+  </div>
+  <p><%= raw post["body"] %></p>
+</div>
