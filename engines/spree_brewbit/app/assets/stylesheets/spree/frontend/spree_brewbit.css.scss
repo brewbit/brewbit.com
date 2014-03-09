@@ -144,7 +144,7 @@ footer#footer {
   width: 930px;
 }
 
-#pre-order {
+a.btn {
   -moz-box-shadow:inset 0px 1px 0px 0px #cae3fc;
   -webkit-box-shadow:inset 0px 1px 0px 0px #cae3fc;
   box-shadow:inset 0px 1px 0px 0px #cae3fc;
@@ -174,7 +174,8 @@ footer#footer {
   font-style:normal;
   height:65px;
   line-height:65px;
-  width:200px;
+  padding-left:25px;
+  padding-right:25px;
   text-decoration:none;
   text-align:center;
   text-shadow:1px 1px 0px #287ace;
