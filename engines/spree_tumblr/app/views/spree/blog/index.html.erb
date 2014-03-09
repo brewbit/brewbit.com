@@ -1,0 +1,8 @@
+<%= render :partial => 'spree/shared/mailing_list_signup' %>
+<hr />
+<% @posts.each do |post| -%>
+  <%= render "post", post: post %>
+  <% if post != @posts.last -%>
+  <hr />
+  <% end -%>
+<% end -%>
