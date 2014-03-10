@@ -11,6 +11,9 @@ Spree.config do |config|
   config.admin_interface_logo = 'logo/brewbit.png'
 end
 
+Spree::Image.attachment_definitions[:attachment][:path] = 'products/:id/:style/:basename.:extension'
+Spree::Image.attachment_definitions[:attachment][:url] = 'products/:id/:style/:basename.:extension'
+
 Spree.user_class = "Spree::User"
 
 SpreeTumblr::Config.blog_name = 'brewbit'
