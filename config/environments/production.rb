@@ -81,6 +81,7 @@ BrewbitSpree::Application.configure do
   # Paperclip configs
   config.paperclip_defaults = {
     :storage => :s3,
+    :s3_protocol => 'https',
     :s3_credentials => {
       :bucket => 'brewbit_com_images_prod',
       :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
