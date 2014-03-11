@@ -11,36 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140311062906) do
+ActiveRecord::Schema.define(version: 20140311064729) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "api_keys", force: true do |t|
-    t.string   "access_token"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "api_keys", ["access_token"], name: "index_api_keys_on_access_token", using: :btree
-  add_index "api_keys", ["user_id"], name: "index_api_keys_on_user_id", using: :btree
-
-  create_table "brews", force: true do |t|
-    t.string   "name"
-    t.date     "date_started"
-    t.date     "date_ended"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "device_id"
-    t.integer  "temperature_profile_id"
-    t.integer  "probe_id"
-  end
-
-  add_index "brews", ["device_id"], name: "index_brews_on_device_id", using: :btree
-  add_index "brews", ["probe_id"], name: "index_brews_on_probe_id", using: :btree
-  add_index "brews", ["temperature_profile_id"], name: "index_brews_on_temperature_profile_id", using: :btree
 
   create_table "device_connections", force: true do |t|
     t.string   "socket_id"
@@ -98,16 +72,6 @@ ActiveRecord::Schema.define(version: 20140311062906) do
   end
 
   add_index "probes", ["device_id"], name: "index_probes_on_device_id", using: :btree
-
-  create_table "sessions", force: true do |t|
-    t.string   "session_id", null: false
-    t.text     "data"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", using: :btree
-  add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
 
   create_table "spree_addresses", force: true do |t|
     t.string   "firstname"
@@ -876,26 +840,5 @@ ActiveRecord::Schema.define(version: 20140311062906) do
 
   add_index "temperatures", ["device_id"], name: "index_temperatures_on_device_id", using: :btree
   add_index "temperatures", ["probe_id"], name: "index_temperatures_on_probe_id", using: :btree
-
-  create_table "users", force: true do |t|
-    t.datetime "created_at",                                    null: false
-    t.datetime "updated_at",                                    null: false
-    t.string   "email",                                         null: false
-    t.string   "name"
-    t.string   "encrypted_password",     default: "",           null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.string   "temperature_scale",      default: "fahrenheit"
-    t.boolean  "admin",                  default: false
-  end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
