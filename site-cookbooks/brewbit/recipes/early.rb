@@ -1,3 +1,9 @@
+# Decrypt databags
+tumblr    = Chef::EncryptedDataBagItem.load("secrets", "tumblr"),
+mailchimp = Chef::EncryptedDataBagItem.load("secrets", "mailchimp"),
+aws       = Chef::EncryptedDataBagItem.load("secrets", "aws")
+ssl       = Chef::EncryptedDataBagItem.load("secrets", "ssl")
+
 # Create the deploy user/group
 users_manage "rvm" do
   action :create
@@ -33,15 +39,13 @@ template "/var/www/brewbit.com/shared/.env" do
   owner "deploy"
   group "deploy"
   variables({
-     :tumblr => Chef::EncryptedDataBagItem.load("secrets", "tumblr"),
-     :mailchimp => Chef::EncryptedDataBagItem.load("secrets", "mailchimp"),
-     :aws => Chef::EncryptedDataBagItem.load("secrets", "aws")
+     :tumblr => tumblr,
+     :mailchimp => mailchimp,
+     :aws => aws
   })
 end
 
-# Install SSL certificate and private key from encrypted data bag
-ssl = Chef::EncryptedDataBagItem.load("secrets", "ssl")
-
+# Install SSL certificate and private key
 file "/etc/ssl/certs/brewbit.com.crt" do
   owner "root"
   group "root"
