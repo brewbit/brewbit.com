@@ -1,6 +1,6 @@
 # Decrypt databags
-tumblr    = Chef::EncryptedDataBagItem.load("secrets", "tumblr"),
-mailchimp = Chef::EncryptedDataBagItem.load("secrets", "mailchimp"),
+tumblr    = Chef::EncryptedDataBagItem.load("secrets", "tumblr")
+mailchimp = Chef::EncryptedDataBagItem.load("secrets", "mailchimp")
 aws       = Chef::EncryptedDataBagItem.load("secrets", "aws")
 ssl       = Chef::EncryptedDataBagItem.load("secrets", "ssl")
 
