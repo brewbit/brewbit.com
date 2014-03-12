@@ -2,6 +2,8 @@
 tumblr    = Chef::EncryptedDataBagItem.load("secrets", "tumblr")
 mailchimp = Chef::EncryptedDataBagItem.load("secrets", "mailchimp")
 aws       = Chef::EncryptedDataBagItem.load("secrets", "aws")
+hipchat   = Chef::EncryptedDataBagItem.load("secrets", "hipchat")
+email     = Chef::EncryptedDataBagItem.load("secrets", "email")
 ssl       = Chef::EncryptedDataBagItem.load("secrets", "ssl")
 
 # Create the deploy user/group
@@ -39,9 +41,11 @@ template "/var/www/brewbit.com/shared/.env" do
   owner "deploy"
   group "deploy"
   variables({
-     :tumblr => tumblr,
+     :tumblr    => tumblr,
      :mailchimp => mailchimp,
-     :aws => aws
+     :hipchat   => hipchat,
+     :email     => email,
+     :aws       => aws
   })
 end
 
