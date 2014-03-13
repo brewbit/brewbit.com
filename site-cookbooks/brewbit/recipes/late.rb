@@ -12,7 +12,5 @@ cron_d "backup" do
   minute "0"
   hour "0"
   user "deploy"
-  command %Q{
-    cd /var/www/brewbit.com/current && env RAILS_ENV="production" backup perform --root-path ./backup --trigger db
-  }
+  command 'cd /var/www/brewbit.com/current && env RAILS_ENV="production" backup perform --root-path ./backup --trigger db'
 end
