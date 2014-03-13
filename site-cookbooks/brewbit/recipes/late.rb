@@ -8,9 +8,13 @@ link "/etc/nginx/sites-enabled/brewbit.com" do
   to "/etc/nginx/sites-available/brewbit.com"
 end
 
-cron_d "backup" do
-  minute "0"
-  hour "0"
-  user "deploy"
-  command 'cd /var/www/brewbit.com/current && env RAILS_ENV="production" backup perform --root-path ./backup --trigger db'
+file '/etc/cron.daily/backup' do
+  owner "root"
+  group "root"
+  mode 0755
+  content %{
+    su deploy
+    cd /var/www/brewbit.com/current
+    env RAILS_ENV=production backup perform --root-path backup --trigger db
+  }
 end
