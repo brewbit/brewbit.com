@@ -7,7 +7,9 @@
 # Issue Tracker: https://github.com/meskyanichi/backup/issues
 
 require 'dotenv'
-Dotenv.load
+Dotenv.load(
+  File.expand_path("../../.env", __FILE__),
+  File.expand_path("../../../shared/.env", __FILE__))
 
 ##
 # Config Options
