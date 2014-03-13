@@ -8,13 +8,9 @@ link "/etc/nginx/sites-enabled/brewbit.com" do
   to "/etc/nginx/sites-available/brewbit.com"
 end
 
-file '/etc/cron.daily/backup' do
+cookbook_file "/etc/cron.daily/backup" do
+  source "etc/cron.daily/backup"
   owner "root"
   group "root"
   mode 0755
-  content %{
-    su deploy
-    cd /var/www/brewbit.com/current
-    env RAILS_ENV=production backup perform --root-path backup --trigger db
-  }
 end

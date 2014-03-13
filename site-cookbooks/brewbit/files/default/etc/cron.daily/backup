@@ -1,0 +1,3 @@
+su deploy
+cd /var/www/brewbit.com/current
+env RAILS_ENV=production backup perform --root-path backup --trigger db
