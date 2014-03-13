@@ -1,7 +1,9 @@
 
-cookbook_file "nginx__sites-available__brewbit.com" do
-  path "/etc/nginx/sites-available/brewbit.com"
-  action [ :delete, :create ]
+cookbook_file "/etc/nginx/sites-available/brewbit.com" do
+  source "etc/nginx/sites-available/brewbit.com"
+  owner "root"
+  group "root"
+  mode 0644
 end
 
 link "/etc/nginx/sites-enabled/brewbit.com" do
