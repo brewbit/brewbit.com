@@ -57,6 +57,7 @@ Vagrant.configure('2') do |config|
         'global_gems'  => [
           {'name'    => 'bundler', 'version' => '1.5.3'},
           {'name'    => 'rake', 'version' => '10.1.0'},
+          {'name'    => 'backup', 'version' => '4.0.1' },
           {'name'    => 'pry' }
         ],
         'vagrant' => {
