@@ -17,7 +17,7 @@ Vagrant.configure('2') do |config|
     provider.api_key = ENV['DIGITAL_OCEAN_API_KEY']
     provider.image = 'Ubuntu 13.04 x64'
     provider.region = 'San Francisco 1'
-    provider.size = '1GB'
+    provider.size = '2GB'
     provider.private_networking = false
     provider.backups_enabled = false
     provider.ssh_key_name = 'Vagrant'
