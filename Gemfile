@@ -36,6 +36,9 @@ gem 'gibbon'
 # Rack HTTP server for fast clients and Unix http://unicorn.bogomips.org/
 gem 'unicorn'
 
+# A fast and very simple Ruby web server http://code.macournoyer.com/thin/
+gem 'thin', group: :development
+
 # Loads environment variables from `.env`. https://github.com/bkeepers/dotenv
 gem 'dotenv-rails'
 
