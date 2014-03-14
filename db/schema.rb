@@ -11,21 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140311064729) do
+ActiveRecord::Schema.define(version: 20140314044151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "device_connections", force: true do |t|
-    t.string   "socket_id"
-    t.string   "device_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "auth_token"
-  end
-
-  add_index "device_connections", ["device_id"], name: "index_device_connections_on_device_id", using: :btree
-  add_index "device_connections", ["socket_id"], name: "index_device_connections_on_socket_id", unique: true, using: :btree
 
   create_table "devices", force: true do |t|
     t.string   "name"
