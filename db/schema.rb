@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140315183127) do
+ActiveRecord::Schema.define(version: 20140315223350) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,25 @@ ActiveRecord::Schema.define(version: 20140315183127) do
   add_index "devices", ["activation_token"], name: "index_devices_on_activation_token", using: :btree
   add_index "devices", ["hardware_identifier"], name: "index_devices_on_hardware_identifier", using: :btree
   add_index "devices", ["user_id"], name: "index_devices_on_user_id", using: :btree
+
+  create_table "dynamic_setpoint_step", force: true do |t|
+    t.integer  "time_offset"
+    t.integer  "point_index"
+    t.decimal  "temperature"
+    t.string   "transition_type"
+    t.integer  "dynamic_setpoint_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "dynamic_setpoints", force: true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "dynamic_setpoints", ["user_id"], name: "index_dynamic_setpoints_on_user_id", using: :btree
 
   create_table "firmwares", force: true do |t|
     t.string   "version"
@@ -77,6 +96,9 @@ ActiveRecord::Schema.define(version: 20140315183127) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "sensor_index"
+    t.integer  "setpoint_type"
+    t.float    "static_setpoint"
+    t.integer  "dynamic_setpoint_id"
   end
 
   add_index "sensors", ["device_id"], name: "index_sensors_on_device_id", using: :btree
@@ -818,24 +840,5 @@ ActiveRecord::Schema.define(version: 20140315183127) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "temperature_points", force: true do |t|
-    t.integer  "time_offset"
-    t.integer  "point_index"
-    t.decimal  "temperature"
-    t.string   "transition_type"
-    t.integer  "temperature_profile_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "temperature_profiles", force: true do |t|
-    t.string   "name"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "temperature_profiles", ["user_id"], name: "index_temperature_profiles_on_user_id", using: :btree
 
 end
