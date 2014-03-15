@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140315094900) do
+ActiveRecord::Schema.define(version: 20140315183127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,7 +76,7 @@ ActiveRecord::Schema.define(version: 20140315094900) do
     t.integer  "device_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "sensor_type"
+    t.integer  "sensor_index"
   end
 
   add_index "sensors", ["device_id"], name: "index_sensors_on_device_id", using: :btree
