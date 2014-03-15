@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140314044151) do
+ActiveRecord::Schema.define(version: 20140315094900) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,21 +56,30 @@ ActiveRecord::Schema.define(version: 20140314044151) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "output_type"
-    t.integer  "probe_id"
+    t.integer  "sensor_id"
     t.integer  "compressor_delay"
   end
 
   add_index "outputs", ["device_id"], name: "index_outputs_on_device_id", using: :btree
-  add_index "outputs", ["probe_id"], name: "index_outputs_on_probe_id", using: :btree
+  add_index "outputs", ["sensor_id"], name: "index_outputs_on_sensor_id", using: :btree
 
-  create_table "probes", force: true do |t|
+  create_table "sensor_readings", force: true do |t|
+    t.float    "value"
+    t.integer  "sensor_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sensor_readings", ["sensor_id"], name: "index_sensor_readings_on_sensor_id", using: :btree
+
+  create_table "sensors", force: true do |t|
     t.integer  "device_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "probe_type"
+    t.string   "sensor_type"
   end
 
-  add_index "probes", ["device_id"], name: "index_probes_on_device_id", using: :btree
+  add_index "sensors", ["device_id"], name: "index_sensors_on_device_id", using: :btree
 
   create_table "spree_addresses", force: true do |t|
     t.string   "firstname"
@@ -828,16 +837,5 @@ ActiveRecord::Schema.define(version: 20140314044151) do
   end
 
   add_index "temperature_profiles", ["user_id"], name: "index_temperature_profiles_on_user_id", using: :btree
-
-  create_table "temperatures", force: true do |t|
-    t.float    "value"
-    t.integer  "device_id"
-    t.integer  "probe_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "temperatures", ["device_id"], name: "index_temperatures_on_device_id", using: :btree
-  add_index "temperatures", ["probe_id"], name: "index_temperatures_on_probe_id", using: :btree
 
 end
