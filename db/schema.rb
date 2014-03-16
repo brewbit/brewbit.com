@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140315235443) do
+ActiveRecord::Schema.define(version: 20140316001027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,14 +40,14 @@ ActiveRecord::Schema.define(version: 20140315235443) do
   add_index "devices", ["hardware_identifier"], name: "index_devices_on_hardware_identifier", using: :btree
   add_index "devices", ["user_id"], name: "index_devices_on_user_id", using: :btree
 
-  create_table "dynamic_setpoint_step", force: true do |t|
+  create_table "dynamic_setpoint_steps", force: true do |t|
     t.integer  "duration"
     t.integer  "index"
-    t.decimal  "value"
-    t.string   "step_type"
     t.integer  "dynamic_setpoint_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "value"
+    t.integer  "step_type"
   end
 
   create_table "dynamic_setpoints", force: true do |t|
