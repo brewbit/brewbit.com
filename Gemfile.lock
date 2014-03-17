@@ -1,4 +1,14 @@
 GIT
+  remote: https://github.com/200Creative/spree_bootstrap_frontend.git
+  revision: 922010a467d4215d83b6ebfee22b505cbd613cfc
+  branch: 2-2-stable
+  specs:
+    spree_bootstrap_frontend (2.2.0)
+      bootstrap-sass (~> 3.1.0)
+      kaminari-bootstrap (~> 3.0.1)
+      spree_core (~> 2.2.0)
+
+GIT
   remote: https://github.com/spree/spree_auth_devise.git
   revision: 1ccd7048bf5595bcfd0ccdb7a8863c12fcf84991
   branch: 2-2-stable
@@ -100,6 +110,8 @@ GEM
     bcrypt-ruby (3.1.5)
       bcrypt (>= 3.1.3)
     beefcake (0.5.0)
+    bootstrap-sass (3.1.1.0)
+      sass (~> 3.2)
     builder (3.1.4)
     cancan (1.6.10)
     canonical-rails (0.0.3)
@@ -226,6 +238,9 @@ GEM
     kaminari (0.15.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    kaminari-bootstrap (3.0.1)
+      kaminari (>= 0.13.0)
+      rails
     kgio (2.9.2)
     knife-solo (0.4.1)
       chef (>= 10.12)
@@ -475,6 +490,7 @@ DEPENDENCIES
   sdoc
   spree (= 2.2.0)
   spree_auth_devise!
+  spree_bootstrap_frontend!
   spree_brewbit!
   spree_brewbit_dashboard!
   spree_gateway!
