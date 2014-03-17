@@ -34,5 +34,7 @@ module BrewbitSpree
     # config.i18n.default_locale = :de
     
     I18n.enforce_available_locales = false
+    
+    config.assets.paths << "#{Rails.root}/vendor/assets/fonts"
   end
 end

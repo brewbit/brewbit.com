@@ -1,0 +1,2 @@
+set_attributes '#spree-footer'
+attributes :class => 'container'
