@@ -65,6 +65,7 @@ body {
 //TODO, bug #6
 .alert-error, .alert-registration_error { @extend .alert-danger; }
 .alert-alert { @extend .alert-info; }
+.alert-notice { @extend .alert-info; }
 
 .product-body {
   height: 170px;
