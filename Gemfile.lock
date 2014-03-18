@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/brewbit/spree_bootstrap_frontend.git
-  revision: 91d462c2eba48142e5bacdce4c382ea06dbb394d
+  revision: 28cd7114574a3a4436215a10b556596e46e750a3
   branch: 2-2-stable
   specs:
     spree_bootstrap_frontend (2.2.0)
