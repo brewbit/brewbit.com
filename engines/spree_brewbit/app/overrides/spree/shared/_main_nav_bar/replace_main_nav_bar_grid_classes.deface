@@ -1,2 +1,0 @@
-set_attributes 'nav'
-attributes :class => 'columns ten'
