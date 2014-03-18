@@ -9,10 +9,6 @@ body {
   background: image-url("store/bg.png") repeat;
   font-size: 14px;
   #page-container {
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0;
-    box-sizing: border-box;
     box-shadow: 0 0 1px black;
     margin-bottom: 40px;
     background: #fafafa;
@@ -23,19 +19,18 @@ body {
 
 // -- Spree Custom Header and Footer ---------------------
 #spree-header {
-  background: #fafafa;
-  margin-bottom: $line-height-computed;
-  border-bottom: 1px solid #d4d4d4;
-  border-top: none;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
   #header {
+    margin-bottom: $line-height-computed;
+    border-bottom: 1px solid #d4d4d4;
+    border-top: none;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
     padding: $line-height-computed 0;
   }
   #logo {
     margin-bottom: 10px;
     img {
-      width: 200px;
+      width: 250px;
     }
   }
   .nav a {
@@ -50,15 +45,19 @@ body {
   }
 }
 #spree-footer {
-  background: #fafafa;
-  padding-top: $padding-base-horizontal;
-  margin-top: $line-height-computed;
-  border-top: 1px solid #d4d4d4;
-  border-radius: 4px;
+  #footer {
+    padding-top: $padding-base-horizontal;
+    margin-top: $line-height-computed;
+    border-top: 1px solid #d4d4d4;
+    border-radius: 4px;
+  }
 }
 
-#footer-links a {
-  margin-right: 25px;
+// -- Homepage rules ------------------------------------
+
+#pricing {
+  margin-top: 75px;
+  margin-bottom: 30px;
 }
 
 // -- Spree Layout Custom Rules -------------------------

@@ -1,2 +1,0 @@
-set_attributes '#spree-header'
-attributes :class => 'container'

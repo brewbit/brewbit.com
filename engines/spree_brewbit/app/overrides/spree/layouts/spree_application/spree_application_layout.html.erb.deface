@@ -1,4 +1,0 @@
-<!-- surround_contents 'body' -->
-<div id="page-container" class="container">
-	<%= render_original %>
-</div>
