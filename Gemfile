@@ -42,6 +42,9 @@ gem 'thin', group: :development
 # Loads environment variables from `.env`. https://github.com/bkeepers/dotenv
 gem 'dotenv-rails'
 
+# dygraphs JavaScript Visualization Library packaged for the Rails asset pipeline
+gem 'dygraphs-rails', :git => 'https://github.com/jmcnevin/dygraphs-rails.git'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

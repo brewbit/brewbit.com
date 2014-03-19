@@ -9,6 +9,12 @@ GIT
       spree_core (~> 2.2.0)
 
 GIT
+  remote: https://github.com/jmcnevin/dygraphs-rails.git
+  revision: a94d01d8e3ee97ad71d6704d86512774b34986a8
+  specs:
+    dygraphs-rails (1.0.1)
+
+GIT
   remote: https://github.com/spree/spree_auth_devise.git
   revision: 1ccd7048bf5595bcfd0ccdb7a8863c12fcf84991
   branch: 2-2-stable
@@ -478,6 +484,7 @@ DEPENDENCIES
   capistrano-rvm
   coffee-rails (~> 4.0.0)
   dotenv-rails
+  dygraphs-rails!
   gibbon
   jbuilder (~> 1.2)
   jquery-rails (~> 3.1.0)

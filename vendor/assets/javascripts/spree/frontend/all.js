@@ -13,3 +13,4 @@
 //= require spree/frontend/spree_brewbit
 //= require spree/frontend/spree_brewbit_dashboard
 //= require bootstrap
+//= require dygraph-combined

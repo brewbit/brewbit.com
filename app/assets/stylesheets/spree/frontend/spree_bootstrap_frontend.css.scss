@@ -60,6 +60,15 @@ body {
   margin-bottom: 30px;
 }
 
+// -- Dashboard rules -----------------------------------
+
+.sensor {
+  margin-bottom: 50px;
+  .sensor-plot {
+    height: 200px;
+  }
+}
+
 // -- Spree Layout Custom Rules -------------------------
 
 //TODO, bug #6
