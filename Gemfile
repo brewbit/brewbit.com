@@ -33,11 +33,8 @@ gem 'jbuilder', '~> 1.2'
 # Gibbon is an API wrapper for MailChimp's API https://github.com/amro/gibbon
 gem 'gibbon'
 
-# Rack HTTP server for fast clients and Unix http://unicorn.bogomips.org/
-gem 'unicorn'
-
-# A fast and very simple Ruby web server http://code.macournoyer.com/thin/
-gem 'thin', group: :development
+# A ruby web server built for concurrency http://puma.io
+gem 'puma', '2.8.1'
 
 # Loads environment variables from `.env`. https://github.com/bkeepers/dotenv
 gem 'dotenv-rails'
@@ -49,6 +46,10 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
+## !!!! TODO !!!! Update to chef 11.12.0 when it is released to fix puma dependency issue
+# A systems integration framework, built to bring the benefits of configuration management to your entire infrastructure. http://www.getchef.com/chef/
+gem 'chef', :git => 'https://github.com/opscode/chef.git', group: :development
 
 # knife-solo adds a handful of Knife commands that aim to make working with chef-solo as powerful as chef-server.
 gem 'knife-solo', group: :development
