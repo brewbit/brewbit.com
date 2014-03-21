@@ -4,15 +4,20 @@
 Vagrant.configure('2') do |config|
   config.omnibus.chef_version = :latest
 
-  config.vm.define :brewbit do |brewbit|
-    brewbit.ssh.username = 'vagrant'
-    brewbit.vm.hostname = 'brewbit.com'
-    brewbit.vm.box = 'digital_ocean'
-    brewbit.vm.box_url = "https://github.com/smdahlen/vagrant-digitalocean/raw/master/box/digital_ocean.box"
-    brewbit.ssh.private_key_path = '~/.ssh/brewbit'
+  config.vm.define :staging do |staging|
+    staging.vm.hostname = 'staging.brewbit.com'
+  end
+
+  config.vm.define :production do |production|
+    production.vm.hostname = 'brewbit.com'
   end
 
   config.vm.provider :digital_ocean do |provider, override|
+    override.ssh.username = 'vagrant'
+    override.vm.box = 'digital_ocean'
+    override.vm.box_url = "https://github.com/smdahlen/vagrant-digitalocean/raw/master/box/digital_ocean.box"
+    override.ssh.private_key_path = '~/.ssh/brewbit'
+    
     provider.client_id = ENV['DIGITAL_OCEAN_CLIENT_ID']
     provider.api_key = ENV['DIGITAL_OCEAN_API_KEY']
     provider.image = 'Ubuntu 13.04 x64'

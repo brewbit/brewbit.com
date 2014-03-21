@@ -1,8 +1,8 @@
-	upstream brewbit.com {
+upstream brewbit.com {
   # fail_timeout=0 means we always retry an upstream even if it failed
   # to return a good HTTP response (in case the Unicorn master nukes a
   # single worker for timing out).
-  server unix:/tmp/brewbit.com.socket fail_timeout=0;
+  server unix:/var/www/brewbit.com/shared/tmp/sockets/puma.sock fail_timeout=0;
 }
 
 server {
