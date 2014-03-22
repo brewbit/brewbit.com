@@ -60,6 +60,7 @@ BrewbitSpree::Application.configure do
   # Precompile additional assets.
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
   # config.assets.precompile += %w( search.js )
+  config.assets.initialize_on_precompile = true
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
@@ -81,6 +82,7 @@ BrewbitSpree::Application.configure do
   # Paperclip configs
   config.paperclip_defaults = {
     :storage => :s3,
+    :s3_protocol => 'https',
     :s3_credentials => {
       :bucket => 'brewbit_com_images_stage',
       :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
