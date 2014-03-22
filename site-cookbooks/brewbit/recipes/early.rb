@@ -19,7 +19,13 @@ directory "/var/www/#{ node[:brewbit][:hostname] }" do
   recursive true
 end
 
-%W[ /var/www/#{ node[:brewbit][:hostname] }/releases /var/www/#{ node[:brewbit][:hostname] }/shared ].each do |path|
+[ "/var/www/#{ node[:brewbit][:hostname] }/releases",
+  "/var/www/#{ node[:brewbit][:hostname] }/shared",
+  "/var/www/#{ node[:brewbit][:hostname] }/shared/tmp",
+  "/var/www/#{ node[:brewbit][:hostname] }/shared/tmp/pids",
+  "/var/www/#{ node[:brewbit][:hostname] }/shared/tmp/sockets",
+  "/var/www/#{ node[:brewbit][:hostname] }/shared/log"
+].each do |path|
   directory path do
     owner "deploy"
     group "deploy"
