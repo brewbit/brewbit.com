@@ -39,6 +39,9 @@ gem 'puma', '2.8.1'
 # Loads environment variables from `.env`. https://github.com/bkeepers/dotenv
 gem 'dotenv-rails'
 
+# Official Sass port of Bootstrap http://getbootstrap.com/css/#sass
+gem 'bootstrap-sass', :git => 'https://github.com/brewbit/bootstrap-sass.git'
+
 # dygraphs JavaScript Visualization Library packaged for the Rails asset pipeline
 gem 'dygraphs-rails', :git => 'https://github.com/jmcnevin/dygraphs-rails.git'
 

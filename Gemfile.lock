@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/brewbit/bootstrap-sass.git
+  revision: 98993aedd42a3c6ec7d4b69e7920335599b0eecf
+  specs:
+    bootstrap-sass (3.1.1.0)
+      sass (~> 3.2)
+
+GIT
   remote: https://github.com/brewbit/spree_bootstrap_frontend.git
   revision: 4fc49ef1d85fd3e1e355ec1cec1750af222b5860
   branch: 2-2-stable
@@ -134,8 +141,6 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.1.1.0)
-      sass (~> 3.2)
     builder (3.1.4)
     cancan (1.6.10)
     canonical-rails (0.0.7)
@@ -437,6 +442,7 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   binding_of_caller
+  bootstrap-sass!
   capistrano
   capistrano-bundler
   capistrano-rails
