@@ -65,7 +65,7 @@ gem 'capistrano', group: :development
 gem 'capistrano-rvm', group: :development
 gem 'capistrano-bundler', group: :development
 gem 'capistrano-rails', group: :development
-gem 'capistrano-puma', group: :development
+gem 'capistrano3-puma', group: :development
 
 # Spree web store
 gem 'spree', '2.2.0'

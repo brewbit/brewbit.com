@@ -147,14 +147,14 @@ GEM
     capistrano-bundler (1.1.2)
       capistrano (~> 3.0)
       sshkit (~> 1.2)
-    capistrano-puma (0.2.3)
-      capistrano (>= 3.0)
     capistrano-rails (1.1.1)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
     capistrano-rvm (0.1.1)
       capistrano (~> 3.0)
       sshkit (~> 1.2)
+    capistrano3-puma (0.2.2)
+      capistrano (~> 3.0)
     chef-zero (2.0.2)
       hashie (~> 2.0)
       json
@@ -439,9 +439,9 @@ DEPENDENCIES
   binding_of_caller
   capistrano
   capistrano-bundler
-  capistrano-puma
   capistrano-rails
   capistrano-rvm
+  capistrano3-puma
   chef!
   coffee-rails (~> 4.0.0)
   dotenv-rails

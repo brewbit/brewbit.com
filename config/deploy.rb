@@ -22,7 +22,7 @@ set :scm, :git
 set :linked_files, %w{.env}
 
 # Default value for linked_dirs is []
-# set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets}
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
