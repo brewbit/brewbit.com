@@ -1,3 +1,6 @@
+
+set :application, 'staging.brewbit.com'
+
 # Simple Role Syntax
 # ==================
 # Supports bulk-adding hosts to roles, the primary
@@ -9,6 +12,12 @@ role :web, %w{deploy@staging.brewbit.com}
 role :db,  %w{deploy@staging.brewbit.com}
 
 set :branch, ENV["BRANCH"] || "master"
+
+# Default deploy_to directory is /var/www/my_app
+set :deploy_to, "/var/www/staging.brewbit.com"
+
+# Default value for default_env is {}
+set :default_env, { rails_env: 'staging' }
 
 # Extended Server Syntax
 # ======================

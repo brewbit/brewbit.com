@@ -1,8 +1,8 @@
-upstream brewbit.com {
+upstream <%= node[:brewbit][:hostname] %> {
   # fail_timeout=0 means we always retry an upstream even if it failed
   # to return a good HTTP response (in case the Unicorn master nukes a
   # single worker for timing out).
-  server unix:///var/www/brewbit.com/shared/tmp/sockets/puma.sock fail_timeout=0;
+  server unix:///var/www/<%= node[:brewbit][:hostname] %>/shared/tmp/sockets/puma.sock fail_timeout=0;
 }
 
 server {
@@ -11,19 +11,19 @@ server {
   listen 80 default;
   listen 443 ssl;
 
-  ssl_certificate /etc/ssl/certs/brewbit.com.crt;
-  ssl_certificate_key /etc/ssl/private/brewbit.com.key;
+  ssl_certificate /etc/ssl/certs/<%= node[:brewbit][:hostname] %>.crt;
+  ssl_certificate_key /etc/ssl/private/<%= node[:brewbit][:hostname] %>.key;
 
   # you could put a list of other domain names this application answers
-  server_name brewbit.com;
+  server_name <%= node[:brewbit][:hostname] %>;
 
-  root /home/spree/brewbit.com/current/public;
-  access_log /var/log/nginx/brewbit.com_access.log;
+  root /home/spree/<%= node[:brewbit][:hostname] %>/current/public;
+  access_log /var/log/nginx/<%= node[:brewbit][:hostname] %>_access.log;
   rewrite_log on;
 
   location / {
     #all requests are sent to the UNIX socket
-    proxy_pass http://brewbit.com;
+    proxy_pass http://<%= node[:brewbit][:hostname] %>;
     proxy_redirect off;
 
     proxy_set_header Host $host;
@@ -48,7 +48,7 @@ server {
   # and add a far future expires header to it, making the browser
   # cache the resource and navigate faster over the website
   location ~ ^/(system|assets|spree)/  {
-    root /var/www/brewbit.com/current/public;
+    root /var/www/<%= node[:brewbit][:hostname] %>/current/public;
     expires max;
     break;
   }

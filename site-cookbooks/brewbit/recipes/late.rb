@@ -1,17 +1,17 @@
 
-cookbook_file "/etc/nginx/sites-available/brewbit.com" do
-  source "etc/nginx/sites-available/brewbit.com"
+template "/etc/nginx/sites-available/#{ node[:brewbit][:hostname] }" do
+  source "etc/nginx/sites-available/app.erb"
   owner "root"
   group "root"
   mode 0644
 end
 
-link "/etc/nginx/sites-enabled/brewbit.com" do
-  to "/etc/nginx/sites-available/brewbit.com"
+link "/etc/nginx/sites-enabled/#{ node[:brewbit][:hostname] }" do
+  to "/etc/nginx/sites-available/#{ node[:brewbit][:hostname] }"
 end
 
-cookbook_file "/etc/cron.daily/backup" do
-  source "etc/cron.daily/backup"
+template "/etc/cron.daily/backup" do
+  source "etc/cron.daily/backup.erb"
   owner "root"
   group "root"
   mode 0755

@@ -3,13 +3,17 @@
 
 Vagrant.configure('2') do |config|
   config.omnibus.chef_version = :latest
+  
+  env = nil
 
   config.vm.define :staging do |staging|
     staging.vm.hostname = 'staging.brewbit.com'
+    env = 'staging'
   end
 
   config.vm.define :production do |production|
     production.vm.hostname = 'brewbit.com'
+    env = 'production'
   end
 
   config.vm.provider :digital_ocean do |provider, override|
@@ -30,99 +34,14 @@ Vagrant.configure('2') do |config|
   end
 
   config.vm.provision :chef_solo do |chef|
-
+    chef.roles_path = 'roles'
+    chef.environments_path = 'environments'
     chef.cookbooks_path = ['cookbooks', 'site-cookbooks']
     chef.data_bags_path = 'data_bags'
     chef.encrypted_data_bag_secret_key_path = "#{ENV['HOME']}/.chef/encrypted_data_bag_secret"
 
-    chef.add_recipe 'chef-solo-search'
-    chef.add_recipe 'users'
-    chef.add_recipe 'locale'
-    chef.add_recipe 'apt'
-    chef.add_recipe 'brewbit::early'
-    chef.add_recipe 'build-essential'
-    chef.add_recipe 'postgresql::server'
-    chef.add_recipe 'postgresql::libpq'
-    chef.add_recipe 'cmake'
-    chef.add_recipe 'libqt4'
-    chef.add_recipe 'imagemagick'
-    chef.add_recipe 'nginx'
-    chef.add_recipe 'rvm::vagrant'
-    chef.add_recipe 'rvm::system'
-    chef.add_recipe 'brewbit::late'
-
-    chef.json = {
-      'locale' => {
-        'lang' => 'en_US.utf8',
-        'lc_all' => 'en_US.utf8'
-      },
-      'rvm' => {
-        'rubies'       => ['2.1.0'],
-        'default_ruby' => '2.1.0',
-        'global_gems'  => [
-          {'name'    => 'bundler', 'version' => '1.5.3'},
-          {'name'    => 'rake', 'version' => '10.1.0'},
-          {'name'    => 'backup', 'version' => '4.0.1' },
-          {'name'    => 'pry' }
-        ],
-        'vagrant' => {
-          'system_chef_solo' => '/opt/chef/bin/chef-solo'
-        },
-        'group_users' => ['vagrant'],
-      },
-      'postgresql' => {
-        'version' => '9.3',
-        'apt_distribution' => 'precise',
-        'users' => [
-          {
-            'username' => 'brewbit',
-            'password' => 'brewbit',
-            'superuser' => false,
-            'createdb' => true,
-            'login' => true
-          },
-          {
-            'username' => 'vagrant',
-            'password' => 'vagrant',
-            'superuser' => true,
-            'createdb' => true,
-            'login' => true
-          }
-        ],
-        "databases" => [
-          {
-            "name" => "brewbit_production",
-            "owner" => "brewbit",
-            "template" => "template0",
-            "encoding" => "utf8",
-            "locale" => "en_US.UTF8"
-          }
-        ]
-      },
-      "nginx" => {
-        "user" => "deploy",
-        "worker_processes" => 3,
-        "pid" => "/var/run/nginx.pid",
-        "worker_connections" => 1024,
-        "multi_accept" => "on",
-        "types_hash_bucket_size" => 512,
-        "types_hash_max_size" => 2048,
-
-        "sendfile" => "on",
-        # "tcp_nopush" => on,
-        # "tcp_nodelay" => off,
-
-        "log_dir" => "/var/log/nginx",
-
-        "gzip" => "on",
-        "gzip_disable" => "msie6",
-
-        "gzip_proxied" => "any",
-        "gzip_min_length" => 500,
-        "gzip_types" => [ "text/plain", "text/css", "application/json", "application/x-javascript",
-                          "text/xml", "application/xml", "application/xml+rss", "text/javascript" ],
-      }
-    }
+    chef.environment = 'staging'
+    chef.add_role 'web'
   end
 end
 

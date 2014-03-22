@@ -12,14 +12,14 @@ users_manage "rvm" do
 end
 
 # Create the application deployment directory
-directory "/var/www/brewbit.com" do
+directory "/var/www/#{ node[:brewbit][:hostname] }" do
   owner "deploy"
   group "deploy"
   mode 02700
   recursive true
 end
 
-%w[ /var/www/brewbit.com/releases /var/www/brewbit.com/shared ].each do |path|
+%W[ /var/www/#{ node[:brewbit][:hostname] }/releases /var/www/#{ node[:brewbit][:hostname] }/shared ].each do |path|
   directory path do
     owner "deploy"
     group "deploy"
@@ -27,7 +27,7 @@ end
   end
 end
 
-directory "/var/log/brewbit.com" do
+directory "/var/log/#{ node[:brewbit][:hostname] }" do
   owner "deploy"
   group "deploy"
   mode 02775
@@ -35,8 +35,8 @@ directory "/var/log/brewbit.com" do
 end
 
 # Create the dotenv file containing secrets
-template "/var/www/brewbit.com/shared/.env" do
-  source "env.erb"
+template "/var/www/#{ node[:brewbit][:hostname] }/shared/.env" do
+  source "var/www/app/shared/dotenv.erb"
   mode 0640
   owner "deploy"
   group "deploy"
@@ -50,14 +50,14 @@ template "/var/www/brewbit.com/shared/.env" do
 end
 
 # Install SSL certificate and private key
-file "/etc/ssl/certs/brewbit.com.crt" do
+file "/etc/ssl/certs/#{ node[:brewbit][:hostname] }.crt" do
   owner "root"
   group "root"
   mode 0644
   content ssl['cert']
 end
 
-file "/etc/ssl/private/brewbit.com.key" do
+file "/etc/ssl/private/#{ node[:brewbit][:hostname] }.key" do
   owner "root"
   group "ssl-cert"
   mode 0640
