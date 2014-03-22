@@ -1,0 +1,2 @@
+#!/bin/sh
+su - deploy -c "cd /var/www/<%= node[:brewbit][:hostname] %>/current/backup/ && bundle install && RAILS_ENV=<%= node['environment'] %> backup perform --root-path . --trigger db"
