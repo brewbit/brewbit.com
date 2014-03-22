@@ -13,8 +13,6 @@ role :app, %w{deploy@brewbit.com}
 role :web, %w{deploy@brewbit.com}
 role :db,  %w{deploy@brewbit.com}
 
-set :branch, ENV["BRANCH"] || "master"
-
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, "/var/www/brewbit.com"
 

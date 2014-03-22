@@ -4,7 +4,7 @@ lock '3.1.0'
 set :repo_url, 'git@github.com:brewbit/brewbit-spree.git'
 
 # Default branch is :master
-# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
+ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 # Default value for :scm is :git
 set :scm, :git
