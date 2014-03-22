@@ -75,3 +75,9 @@ gem 'spree_bootstrap_frontend', :git => 'https://github.com/brewbit/spree_bootst
 gem 'spree_brewbit', :path => 'engines/spree_brewbit'
 gem 'spree_tumblr', :path => 'engines/spree_tumblr'
 gem 'spree_brewbit_dashboard', :path => 'engines/spree_brewbit_dashboard'
+
+gem 'faye-websocket'
+
+gem 'better_errors', group: :development
+gem "binding_of_caller", group: :development
+

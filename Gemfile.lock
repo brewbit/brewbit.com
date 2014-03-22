@@ -69,7 +69,6 @@ PATH
   specs:
     spree_brewbit_dashboard (2.2.0)
       beefcake
-      faye
       nested_form
       spree_core (~> 2.2.0)
 
@@ -119,7 +118,6 @@ GEM
       tzinfo (~> 0.3.37)
     acts_as_list (0.3.0)
       activerecord (>= 3.0)
-    addressable (2.3.5)
     archive-tar-minitar (0.5.2)
     arel (4.0.2)
     atomic (1.1.16)
@@ -131,6 +129,11 @@ GEM
       uuidtools (~> 2.1)
     bcrypt (3.1.7)
     beefcake (0.5.0)
+    better_errors (1.1.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     bootstrap-sass (3.1.1.0)
       sass (~> 3.2)
     builder (3.1.4)
@@ -170,7 +173,7 @@ GEM
       execjs
     coffee-script-source (1.7.0)
     colorize (0.7.0)
-    cookiejar (0.3.2)
+    debug_inspector (0.0.2)
     deface (1.0.0)
       colorize (>= 0.5.8)
       nokogiri (~> 1.6.0)
@@ -187,25 +190,9 @@ GEM
     dotenv (0.10.0)
     dotenv-rails (0.10.0)
       dotenv (= 0.10.0)
-    em-http-request (1.1.2)
-      addressable (>= 2.3.4)
-      cookiejar
-      em-socksify (>= 0.3)
-      eventmachine (>= 1.0.3)
-      http_parser.rb (>= 0.6.0)
-    em-socksify (0.3.0)
-      eventmachine (>= 1.0.0.beta.4)
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.0.2)
-    faye (1.0.1)
-      cookiejar (>= 0.3.0)
-      em-http-request (>= 0.3.0)
-      eventmachine (>= 0.12.0)
-      faye-websocket (>= 0.7.0)
-      multi_json (>= 1.0.0)
-      rack (>= 1.0.0)
-      websocket-driver (>= 0.3.0)
     faye-websocket (0.7.2)
       eventmachine (>= 0.12.0)
       websocket-driver (>= 0.3.1)
@@ -218,7 +205,6 @@ GEM
     hashie (2.0.5)
     highline (1.6.21)
     hike (1.2.3)
-    http_parser.rb (0.6.0)
     httparty (0.13.0)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
@@ -449,6 +435,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  better_errors
+  binding_of_caller
   capistrano
   capistrano-bundler
   capistrano-puma
@@ -458,6 +446,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   dotenv-rails
   dygraphs-rails!
+  faye-websocket
   gibbon
   jbuilder (~> 1.2)
   jquery-rails (~> 3.1.0)

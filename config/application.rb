@@ -8,7 +8,7 @@ Bundler.require(:default, Rails.env)
 
 module BrewbitSpree
   class Application < Rails::Application
-    
+
     config.to_prepare do
       # Load application's model / class decorators
       Dir.glob(File.join(File.dirname(__FILE__), "../app/**/*_decorator*.rb")) do |c|
@@ -32,9 +32,11 @@ module BrewbitSpree
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-    
+
     I18n.enforce_available_locales = false
-    
+
     config.assets.paths << "#{Rails.root}/vendor/assets/fonts"
+
+    config.middleware.use "WebSocket::DeviceServer"
   end
 end
