@@ -8,6 +8,8 @@ role :app, %w{deploy@brewbit.com}
 role :web, %w{deploy@brewbit.com}
 role :db,  %w{deploy@brewbit.com}
 
+set :branch, ENV["BRANCH"] || "master"
+
 # Extended Server Syntax
 # ======================
 # This can be used to drop a more detailed server
