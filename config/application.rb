@@ -36,6 +36,7 @@ module BrewbitSpree
     I18n.enforce_available_locales = false
 
     config.assets.paths << "#{Rails.root}/vendor/assets/fonts"
+    config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
 
     config.middleware.use "WebSocket::DeviceServer"
   end
