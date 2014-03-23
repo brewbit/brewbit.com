@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140322041252) do
+ActiveRecord::Schema.define(version: 20140323042032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20140322041252) do
 
   create_table "dynamic_setpoint_steps", force: true do |t|
     t.integer  "duration"
-    t.integer  "index"
+    t.integer  "step_index"
     t.integer  "dynamic_setpoint_id"
     t.datetime "created_at"
     t.datetime "updated_at"
