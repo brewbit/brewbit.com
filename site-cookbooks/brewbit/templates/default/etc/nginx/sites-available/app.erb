@@ -6,8 +6,8 @@ upstream <%= node[:brewbit][:hostname] %> {
 }
 
 map $http_upgrade $connection_upgrade {
-  default upgrade;
-  ''      close;
+  default Upgrade;
+  ''      Close;
 }
 
 server {
@@ -24,6 +24,7 @@ server {
 
   root /home/spree/<%= node[:brewbit][:hostname] %>/current/public;
   access_log /var/log/nginx/<%= node[:brewbit][:hostname] %>_access.log;
+  error_log /var/log/nginx/<%= node[:brewbit][:hostname] %>_error.log;
   rewrite_log on;
 
   location / {
