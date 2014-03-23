@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140323042032) do
+ActiveRecord::Schema.define(version: 20140323171156) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,25 +39,6 @@ ActiveRecord::Schema.define(version: 20140323042032) do
   add_index "devices", ["activation_token"], name: "index_devices_on_activation_token", using: :btree
   add_index "devices", ["hardware_identifier"], name: "index_devices_on_hardware_identifier", using: :btree
   add_index "devices", ["user_id"], name: "index_devices_on_user_id", using: :btree
-
-  create_table "dynamic_setpoint_steps", force: true do |t|
-    t.integer  "duration"
-    t.integer  "step_index"
-    t.integer  "dynamic_setpoint_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.float    "value"
-    t.integer  "step_type"
-  end
-
-  create_table "dynamic_setpoints", force: true do |t|
-    t.string   "name"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "dynamic_setpoints", ["user_id"], name: "index_dynamic_setpoints_on_user_id", using: :btree
 
   create_table "firmwares", force: true do |t|
     t.string   "version"
@@ -99,7 +80,7 @@ ActiveRecord::Schema.define(version: 20140323042032) do
     t.integer  "sensor_index"
     t.integer  "setpoint_type"
     t.float    "static_setpoint"
-    t.integer  "dynamic_setpoint_id"
+    t.integer  "temp_profile_id"
   end
 
   add_index "sensors", ["device_id"], name: "index_sensors_on_device_id", using: :btree
@@ -841,5 +822,24 @@ ActiveRecord::Schema.define(version: 20140323042032) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "temp_profile_steps", force: true do |t|
+    t.integer  "duration"
+    t.integer  "step_index"
+    t.integer  "temp_profile_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.float    "value"
+    t.integer  "step_type"
+  end
+
+  create_table "temp_profiles", force: true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "temp_profiles", ["user_id"], name: "index_temp_profiles_on_user_id", using: :btree
 
 end
