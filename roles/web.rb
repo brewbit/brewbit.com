@@ -13,7 +13,7 @@ run_list 'recipe[chef-solo-search]',
          'recipe[cmake]',
          'recipe[libqt4]',
          'recipe[imagemagick]',
-         'recipe[nginx]',
+         'recipe[nginx::source]',
          'recipe[rvm::vagrant]',
          'recipe[rvm::system]',
          'recipe[brewbit::late]'
@@ -42,6 +42,11 @@ default_attributes(
     'apt_distribution' => 'precise',
   },
   "nginx" => {
+    "version" => "1.4.7",
+    "source" => {
+      "use_existing_user" => true,
+    },
+    "init_style" => "upstart",
     "user" => "deploy",
     "worker_processes" => 3,
     "pid" => "/var/run/nginx.pid",
