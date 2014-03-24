@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140324185010) do
+ActiveRecord::Schema.define(version: 20140324190924) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20140324185010) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "sensor_id"
-    t.integer  "compressor_delay"
+    t.integer  "cycle_delay"
     t.integer  "output_index"
     t.integer  "output_mode"
   end
