@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140323184509) do
+ActiveRecord::Schema.define(version: 20140324185010) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20140323184509) do
     t.integer  "sensor_id"
     t.integer  "compressor_delay"
     t.integer  "output_index"
+    t.integer  "output_mode"
   end
 
   add_index "outputs", ["device_id"], name: "index_outputs_on_device_id", using: :btree
