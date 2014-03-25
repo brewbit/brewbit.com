@@ -6,14 +6,9 @@ upstream brewbit.com {
 }
 
 server {
-  listen 80 default;
-  deny all;
-}
-
-server {
   # if you're running multiple servers, instead of "default" you should
   # put your main domain name here
-  listen 80;
+  listen 80 default;
   listen 443 ssl;
 
   ssl_certificate /etc/ssl/certs/brewbit.com.crt;
@@ -25,6 +20,11 @@ server {
   root /home/spree/brewbit.com/current/public;
   access_log /var/log/nginx/brewbit.com_access.log;
   rewrite_log on;
+  
+  ## Deny illegal Host headers
+  if ($host !~* ^(brewbit.com|www.brewbit.com)$ ) {
+    return 444;
+  }
   
   location / {
     #all requests are sent to the UNIX socket
