@@ -13,14 +13,14 @@ server {
 server {
   # if you're running multiple servers, instead of "default" you should
   # put your main domain name here
-  listen 80 default;
+  listen 80;
   listen 443 ssl;
 
   ssl_certificate /etc/ssl/certs/brewbit.com.crt;
   ssl_certificate_key /etc/ssl/private/brewbit.com.key;
 
   # you could put a list of other domain names this application answers
-  server_name brewbit.com;
+  server_name *.brewbit.com;
 
   root /home/spree/brewbit.com/current/public;
   access_log /var/log/nginx/brewbit.com_access.log;
