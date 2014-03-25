@@ -313,6 +313,7 @@ GEM
     sdoc (0.4.0)
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
+    secure_headers (1.1.1)
     select2-rails (3.4.9)
       sass-rails
       thor (~> 0.14)
@@ -437,6 +438,7 @@ DEPENDENCIES
   rails (= 4.0.3)
   sass-rails (~> 4.0.0)
   sdoc
+  secure_headers
   spree (= 2.2.0)
   spree_auth_devise!
   spree_brewbit!

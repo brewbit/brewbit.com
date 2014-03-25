@@ -65,3 +65,6 @@ gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :bran
 gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '2-2-stable'
 gem 'spree_brewbit', :git => 'git@github.com:brewbit/spree_brewbit.git', :branch => 'master'
 gem 'spree_tumblr', :git => 'git@github.com:brewbit/spree_tumblr.git', :branch => 'master'
+
+gem 'secure_headers'
+
