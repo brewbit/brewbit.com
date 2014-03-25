@@ -1,8 +1,13 @@
-	upstream brewbit.com {
+upstream brewbit.com {
   # fail_timeout=0 means we always retry an upstream even if it failed
   # to return a good HTTP response (in case the Unicorn master nukes a
   # single worker for timing out).
   server unix:/tmp/brewbit.com.socket fail_timeout=0;
+}
+
+server {
+  listen 80 default;
+  deny all;
 }
 
 server {
@@ -20,7 +25,7 @@ server {
   root /home/spree/brewbit.com/current/public;
   access_log /var/log/nginx/brewbit.com_access.log;
   rewrite_log on;
-
+  
   location / {
     #all requests are sent to the UNIX socket
     proxy_pass http://brewbit.com;
