@@ -1,6 +1,7 @@
 GIT
   remote: https://github.com/brewbit/bootstrap-sass.git
-  revision: 98993aedd42a3c6ec7d4b69e7920335599b0eecf
+  revision: 4f65a8222866d0069f25efd447878cba7f09eb5b
+  branch: master
   specs:
     bootstrap-sass (3.1.1.0)
       sass (~> 3.2)
