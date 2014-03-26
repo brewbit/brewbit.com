@@ -864,6 +864,7 @@ ActiveRecord::Schema.define(version: 20140325191324) do
     t.datetime "updated_at"
     t.float    "value"
     t.integer  "step_type"
+    t.string   "duration_type"
   end
 
   create_table "temp_profiles", force: true do |t|
