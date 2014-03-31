@@ -34,6 +34,11 @@ module BrewbitSpree
     # config.i18n.default_locale = :de
 
     I18n.enforce_available_locales = false
+    
+    # If an exception occurs in the websocket thread, it should kill the process
+    Thread.current.abort_on_exception = true
+
+    config.cache_classes = true
 
     config.assets.paths << "#{Rails.root}/vendor/assets/fonts"
     config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
