@@ -814,6 +814,7 @@ ActiveRecord::Schema.define(version: 20140402042642) do
     t.datetime "updated_at"
     t.string   "spree_api_key",          limit: 48
     t.datetime "remember_created_at"
+    t.string   "temperature_scale"
   end
 
   add_index "spree_users", ["email"], name: "email_idx_unique", unique: true, using: :btree
