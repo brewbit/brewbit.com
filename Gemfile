@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 #ruby-gemset=brewbit-spree
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.3'
+gem 'rails', '4.0.4'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -83,4 +83,5 @@ gem 'faye-websocket', :git => 'https://github.com/brewbit/faye-websocket-ruby.gi
 
 gem 'better_errors', group: :development
 gem "binding_of_caller", group: :development
+gem 'bullet', group: :development
 
