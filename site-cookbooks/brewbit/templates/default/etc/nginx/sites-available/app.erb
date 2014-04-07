@@ -26,6 +26,11 @@ server {
   access_log /var/log/nginx/<%= node[:brewbit][:hostname] %>_access.log;
   error_log /var/log/nginx/<%= node[:brewbit][:hostname] %>_error.log;
   rewrite_log on;
+  
+  ## Deny illegal Host headers
+  if ($host !~* ^(<%= node[:brewbit][:hostname] %>|www.<%= node[:brewbit][:hostname] %>)$ ) {
+    return 444;
+  }
 
   location / {
     #all requests are sent to the UNIX socket
