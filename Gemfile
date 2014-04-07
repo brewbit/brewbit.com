@@ -45,6 +45,9 @@ gem 'bootstrap-sass', :git => 'https://github.com/brewbit/bootstrap-sass.git', :
 # dygraphs JavaScript Visualization Library packaged for the Rails asset pipeline
 gem 'dygraphs-rails', :git => 'https://github.com/jmcnevin/dygraphs-rails.git'
 
+# General ruby templating with json, bson, xml, plist and msgpack support https://github.com/nesquena/rabl
+gem 'rabl'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

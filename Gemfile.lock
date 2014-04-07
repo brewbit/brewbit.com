@@ -477,6 +477,7 @@ DEPENDENCIES
   librarian-chef
   pg
   puma (= 2.8.1)
+  rabl
   rails (= 4.0.4)
   sass-rails (~> 4.0.0)
   sdoc
