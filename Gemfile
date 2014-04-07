@@ -82,8 +82,6 @@ gem 'spree_brewbit', :path => 'engines/spree_brewbit'
 gem 'spree_tumblr', :path => 'engines/spree_tumblr'
 gem 'spree_brewbit_dashboard', :path => 'engines/spree_brewbit_dashboard'
 
-gem 'faye-websocket', :git => 'https://github.com/brewbit/faye-websocket-ruby.git', :branch => 'master'
-
 gem 'better_errors', group: :development
 gem "binding_of_caller", group: :development
 gem 'bullet', group: :development

@@ -38,11 +38,7 @@ module BrewbitSpree
     # If an exception occurs in the websocket thread, it should kill the process
     Thread.current.abort_on_exception = true
 
-    config.cache_classes = true
-
     config.assets.paths << "#{Rails.root}/vendor/assets/fonts"
     config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
-
-    config.middleware.use "WebSocket::DeviceServer"
   end
 end

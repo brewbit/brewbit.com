@@ -7,15 +7,6 @@ GIT
       sass (~> 3.2)
 
 GIT
-  remote: https://github.com/brewbit/faye-websocket-ruby.git
-  revision: 08e162c1c92e1d883c378b4cce3bbe9eea453825
-  branch: master
-  specs:
-    faye-websocket (0.7.2)
-      eventmachine (>= 0.12.0)
-      websocket-driver (>= 0.3.1)
-
-GIT
   remote: https://github.com/brewbit/spree_bootstrap_frontend.git
   revision: 14e912926d3b121b5bc84baf3872d6ed56005fa2
   branch: 2-2-stable
@@ -261,7 +252,6 @@ GEM
     dotenv-rails (0.10.0)
       dotenv (= 0.10.0)
     erubis (2.7.0)
-    eventmachine (1.0.3)
     execjs (2.0.2)
     ffaker (1.23.0)
     friendly_id (5.0.3)
@@ -448,7 +438,6 @@ GEM
       tzinfo
     warden (1.2.3)
       rack (>= 1.0)
-    websocket-driver (0.3.2)
     yajl-ruby (1.2.0)
 
 PLATFORMS
@@ -468,7 +457,6 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   dotenv-rails
   dygraphs-rails!
-  faye-websocket!
   gibbon
   jbuilder (~> 1.2)
   jquery-rails (~> 3.1.0)
