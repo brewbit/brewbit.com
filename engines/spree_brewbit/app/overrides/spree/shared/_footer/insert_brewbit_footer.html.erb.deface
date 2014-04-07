@@ -1,14 +1,16 @@
 <!-- replace_contents 'footer' -->
 <div class="col-md-4">
-  	&copy; 2014 Inebriated Innovations, LLC
+    &copy; 2014 Inebriated Innovations, LLC
 </div>
 <div id="footer-social" class="col-md-4 text-center">
-	<ul class='list-inline'>
-		<li><a href="https://twitter.com/TheBrewBit"><%= image_tag "glyphicons_392_twitter.png" %></a></li>
-		<li><a href="http://www.facebook.com/BrewBit"><%= image_tag "glyphicons_390_facebook.png" %></a></li>
-		<li><a href="mailto:brewbit@brewbit.com"><%= image_tag "glyphicons_399_e-mail.png" %></a></li>
-	</ul>
+  <ul class='list-inline'>
+    <li><a href="https://twitter.com/TheBrewBit"><%= image_tag "glyphicons_392_twitter.png" %></a></li>
+    <li><a href="http://www.facebook.com/BrewBit"><%= image_tag "glyphicons_390_facebook.png" %></a></li>
+    <li><a href="mailto:brewbit@brewbit.com"><%= image_tag "glyphicons_399_e-mail.png" %></a></li>
+  </ul>
 </div>
 <div id="footer-links" class="col-md-4 text-right">
-	<%= link_to "Privacy Policy", privacy_path %>
+  <%= link_to "Thank You Backers", backers_path %>
+  &nbsp;|&nbsp;
+  <%= link_to "Privacy Policy", privacy_path %>
 </div>
