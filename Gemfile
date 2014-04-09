@@ -66,13 +66,6 @@ gem 'knife-solo_data_bag', group: :development
 # Librarian-Chef is a bundler for your Chef-based infrastructure repositories.
 gem 'librarian-chef', group: :development
 
-# Use Capistrano for deployment
-gem 'capistrano', group: :development
-gem 'capistrano-rvm', group: :development
-gem 'capistrano-bundler', group: :development
-gem 'capistrano-rails', group: :development
-gem 'capistrano3-puma', group: :development
-
 # Spree web store
 gem 'spree', :git => 'https://github.com/spree/spree.git', :branch => '2-2-stable'
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-2-stable'
