@@ -53,19 +53,6 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-## !!!! TODO !!!! Update to chef 11.12.0 when it is released to fix puma dependency issue
-# A systems integration framework, built to bring the benefits of configuration management to your entire infrastructure. http://www.getchef.com/chef/
-gem 'chef', :git => 'https://github.com/opscode/chef.git', group: :development
-
-# knife-solo adds a handful of Knife commands that aim to make working with chef-solo as powerful as chef-server.
-gem 'knife-solo', group: :development
-
-# A knife plugin to make working with data bags easier in a chef solo environment.
-gem 'knife-solo_data_bag', group: :development
-
-# Librarian-Chef is a bundler for your Chef-based infrastructure repositories.
-gem 'librarian-chef', group: :development
-
 # Spree web store
 gem 'spree', :git => 'https://github.com/spree/spree.git', :branch => '2-2-stable'
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-2-stable'
