@@ -48,6 +48,9 @@ gem 'dygraphs-rails', :git => 'https://github.com/jmcnevin/dygraphs-rails.git'
 # General ruby templating with json, bson, xml, plist and msgpack support https://github.com/nesquena/rabl
 gem 'rabl'
 
+# Manage Procfile-based applications http://ddollar.github.com/foreman
+gem 'foreman'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
