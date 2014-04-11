@@ -1,1 +1,1 @@
-app:  cd /var/www/staging.brewbit.com/current && ( RAILS_ENV=staging RACK_ENV=staging bundle exec puma -C config/puma.rb
+app:  cd /var/www/staging.brewbit.com/current && ( RAILS_ENV=staging RACK_ENV=staging bundle exec puma -C config/puma.rb )
