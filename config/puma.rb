@@ -13,14 +13,14 @@
 #
 # The default is “development”.
 #
-environment = :production
+environment = :staging
 
 # Daemonize the server into the background. Highly suggest that
 # this be combined with “pidfile” and “stdout_redirect”.
 #
 # The default is “false”.
 #
-daemonize true
+# daemonize true
 
 # Store the pid of the server in the file at “path”.
 #
