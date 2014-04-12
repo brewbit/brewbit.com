@@ -51,6 +51,9 @@ gem 'rabl'
 # Manage Procfile-based applications http://ddollar.github.com/foreman
 gem 'foreman'
 
+# DB backup/restore tool https://github.com/ludicast/yaml_db
+gem 'yaml_db'
+
 gem 'spree', :git => 'https://github.com/spree/spree.git', :branch => '2-2-stable'
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-2-stable'
 gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '2-2-stable'
