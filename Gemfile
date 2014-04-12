@@ -45,30 +45,16 @@ gem 'bootstrap-sass', :git => 'https://github.com/brewbit/bootstrap-sass.git', :
 # dygraphs JavaScript Visualization Library packaged for the Rails asset pipeline
 gem 'dygraphs-rails', :git => 'https://github.com/jmcnevin/dygraphs-rails.git'
 
+# General ruby templating with json, bson, xml, plist and msgpack support https://github.com/nesquena/rabl
+gem 'rabl'
+
+# Manage Procfile-based applications http://ddollar.github.com/foreman
+gem 'foreman'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
-
-## !!!! TODO !!!! Update to chef 11.12.0 when it is released to fix puma dependency issue
-# A systems integration framework, built to bring the benefits of configuration management to your entire infrastructure. http://www.getchef.com/chef/
-gem 'chef', :git => 'https://github.com/opscode/chef.git', group: :development
-
-# knife-solo adds a handful of Knife commands that aim to make working with chef-solo as powerful as chef-server.
-gem 'knife-solo', group: :development
-
-# A knife plugin to make working with data bags easier in a chef solo environment.
-gem 'knife-solo_data_bag', group: :development
-
-# Librarian-Chef is a bundler for your Chef-based infrastructure repositories.
-gem 'librarian-chef', group: :development
-
-# Use Capistrano for deployment
-gem 'capistrano', group: :development
-gem 'capistrano-rvm', group: :development
-gem 'capistrano-bundler', group: :development
-gem 'capistrano-rails', group: :development
-gem 'capistrano3-puma', group: :development
 
 # Spree web store
 gem 'spree', :git => 'https://github.com/spree/spree.git', :branch => '2-2-stable'
@@ -78,8 +64,6 @@ gem 'spree_bootstrap_frontend', :git => 'https://github.com/brewbit/spree_bootst
 gem 'spree_brewbit', :path => 'engines/spree_brewbit'
 gem 'spree_tumblr', :path => 'engines/spree_tumblr'
 gem 'spree_brewbit_dashboard', :path => 'engines/spree_brewbit_dashboard'
-
-gem 'faye-websocket', :git => 'https://github.com/brewbit/faye-websocket-ruby.git', :branch => 'master'
 
 gem 'better_errors', group: :development
 gem "binding_of_caller", group: :development
