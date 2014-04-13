@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140406192113) do
+ActiveRecord::Schema.define(version: 20140413092706) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,18 +80,6 @@ ActiveRecord::Schema.define(version: 20140406192113) do
 
   add_index "outputs", ["device_id"], name: "index_outputs_on_device_id", using: :btree
   add_index "outputs", ["output_index"], name: "index_outputs_on_output_index", using: :btree
-
-  create_table "sensor_readings", force: true do |t|
-    t.float    "value"
-    t.integer  "sensor_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "sensor_settings_id"
-    t.float    "setpoint"
-  end
-
-  add_index "sensor_readings", ["sensor_id"], name: "index_sensor_readings_on_sensor_id", using: :btree
-  add_index "sensor_readings", ["sensor_settings_id"], name: "index_sensor_readings_on_sensor_settings_id", using: :btree
 
   create_table "sensor_settings", force: true do |t|
     t.integer  "device_command_id"
