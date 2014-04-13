@@ -64,5 +64,5 @@ gem 'spree_brewbit_dashboard', :path => 'engines/spree_brewbit_dashboard'
 
 gem 'better_errors', group: :development
 gem "binding_of_caller", group: :development
-gem 'bullet', group: [ :development, :staging ]
+gem 'bullet', group: :development
 
