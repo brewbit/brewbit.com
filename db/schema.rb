@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140413092706) do
+ActiveRecord::Schema.define(version: 20140419065153) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,11 +26,17 @@ ActiveRecord::Schema.define(version: 20140413092706) do
   add_index "api_keys", ["access_token"], name: "index_api_keys_on_access_token", using: :btree
   add_index "api_keys", ["user_id"], name: "index_api_keys_on_user_id", using: :btree
 
-  create_table "device_commands", force: true do |t|
+  create_table "device_sessions", force: true do |t|
     t.integer  "device_id"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "sensor_index"
+    t.integer  "setpoint_type"
+    t.float    "static_setpoint"
+    t.integer  "temp_profile_id"
+    t.boolean  "active"
+    t.string   "uuid"
   end
 
   create_table "devices", force: true do |t|
@@ -41,6 +47,9 @@ ActiveRecord::Schema.define(version: 20140413092706) do
     t.decimal  "signal_strength"
     t.string   "hardware_identifier"
     t.string   "activation_token"
+    t.integer  "output_count"
+    t.integer  "sensor_count"
+    t.integer  "control_mode"
   end
 
   add_index "devices", ["activation_token"], name: "index_devices_on_activation_token", using: :btree
@@ -58,50 +67,15 @@ ActiveRecord::Schema.define(version: 20140413092706) do
   add_index "firmwares", ["version"], name: "index_firmwares_on_version", unique: true, using: :btree
 
   create_table "output_settings", force: true do |t|
-    t.integer  "device_command_id"
-    t.integer  "output_id"
+    t.integer  "device_session_id"
     t.integer  "function"
     t.integer  "cycle_delay"
-    t.integer  "output_mode"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "sensor_id"
-  end
-
-  add_index "output_settings", ["device_command_id"], name: "index_output_settings_on_device_command_id", using: :btree
-  add_index "output_settings", ["output_id"], name: "index_output_settings_on_output_id", using: :btree
-
-  create_table "outputs", force: true do |t|
-    t.integer  "device_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "output_index"
   end
 
-  add_index "outputs", ["device_id"], name: "index_outputs_on_device_id", using: :btree
-  add_index "outputs", ["output_index"], name: "index_outputs_on_output_index", using: :btree
-
-  create_table "sensor_settings", force: true do |t|
-    t.integer  "device_command_id"
-    t.integer  "sensor_id"
-    t.integer  "setpoint_type"
-    t.float    "static_setpoint"
-    t.integer  "temp_profile_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "sensor_settings", ["device_command_id"], name: "index_sensor_settings_on_device_command_id", using: :btree
-  add_index "sensor_settings", ["sensor_id"], name: "index_sensor_settings_on_sensor_id", using: :btree
-
-  create_table "sensors", force: true do |t|
-    t.integer  "device_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "sensor_index"
-  end
-
-  add_index "sensors", ["device_id"], name: "index_sensors_on_device_id", using: :btree
+  add_index "output_settings", ["device_session_id"], name: "index_output_settings_on_device_session_id", using: :btree
 
   create_table "spree_addresses", force: true do |t|
     t.string   "firstname"
