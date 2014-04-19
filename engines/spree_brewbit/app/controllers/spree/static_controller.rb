@@ -4,4 +4,7 @@ class Spree::StaticController < Spree::StoreController
 
   def backers
   end
+
+  def model_t
+  end
 end
