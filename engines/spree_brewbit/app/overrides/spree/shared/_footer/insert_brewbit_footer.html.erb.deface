@@ -10,7 +10,5 @@
   </ul>
 </div>
 <div id="footer-links" class="col-md-4 text-right">
-  <%= link_to "Thank You Backers", backers_path %>
-  &nbsp;|&nbsp;
   <%= link_to "Privacy Policy", privacy_path %>
 </div>
