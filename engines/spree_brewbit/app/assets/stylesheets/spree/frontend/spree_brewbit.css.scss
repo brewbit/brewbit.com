@@ -62,7 +62,7 @@ h5 {
 	border-bottom-left-radius: 4px;
 	border-bottom-right-radius: 4px;
 	box-shadow: 0 1px 4px rgba(0,0,0,0.065);
-	
+
 	figure#logo {
 	  img {
       width: 200px;
@@ -82,11 +82,11 @@ nav#top-nav-bar {
         font-weight: normal;
         text-transform: none;
       }
-      
+
       &#link-to-cart {
         padding-left: 28px;
         background: asset-url("spree/frontend/cart.png") no-repeat left center;
-  
+
         a {
           .amount {
             font-weight: bold;
@@ -112,24 +112,24 @@ footer#footer {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   margin: 0;
-  
+
   #footer-social {
     text-align: center;
-    
+
     img {
       margin: 5px;
     }
   }
-  
+
   #footer-links {
     text-align: right;
   }
-  
+
   div {
     margin-top: 25px;
     margin-bottom: 15px;
   }
-  
+
   ul {
     margin: 0;
   }
@@ -180,13 +180,13 @@ a.btn {
   text-align:center;
   text-shadow:1px 1px 0px #287ace;
 }
-#pre-order:hover {
+#hero-order:hover {
   background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #4197ee), color-stop(1, #79bbff) );
   background:-moz-linear-gradient( center top, #4197ee 5%, #79bbff 100% );
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#4197ee', endColorstr='#79bbff');
   background-color:#4197ee;
 }
-#pre-order:active {
+#hero-order:active {
   position:relative;
   top:1px;
 }
