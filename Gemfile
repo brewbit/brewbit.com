@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 #ruby-gemset=brewbit-spree
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.3'
+gem 'rails', '4.0.4'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -33,35 +33,36 @@ gem 'jbuilder', '~> 1.2'
 # Gibbon is an API wrapper for MailChimp's API https://github.com/amro/gibbon
 gem 'gibbon'
 
-# Rack HTTP server for fast clients and Unix http://unicorn.bogomips.org/
-gem 'unicorn'
+# A ruby web server built for concurrency http://puma.io
+gem 'puma', '2.8.1'
 
 # Loads environment variables from `.env`. https://github.com/bkeepers/dotenv
 gem 'dotenv-rails'
 
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
+# Official Sass port of Bootstrap http://getbootstrap.com/css/#sass
+gem 'bootstrap-sass', :git => 'https://github.com/brewbit/bootstrap-sass.git', :branch => 'master'
 
-# knife-solo adds a handful of Knife commands that aim to make working with chef-solo as powerful as chef-server.
-gem 'knife-solo', group: :development
+# dygraphs JavaScript Visualization Library packaged for the Rails asset pipeline
+gem 'dygraphs-rails', :git => 'https://github.com/jmcnevin/dygraphs-rails.git'
 
-# A knife plugin to make working with data bags easier in a chef solo environment.
-gem 'knife-solo_data_bag', group: :development
+# General ruby templating with json, bson, xml, plist and msgpack support https://github.com/nesquena/rabl
+gem 'rabl'
 
-# Librarian-Chef is a bundler for your Chef-based infrastructure repositories.
-gem 'librarian-chef', group: :development
+# Manage Procfile-based applications http://ddollar.github.com/foreman
+gem 'foreman'
 
-# Use Capistrano for deployment
-gem 'capistrano', group: :development
-gem 'capistrano-rvm', group: :development
-gem 'capistrano-bundler', group: :development
-gem 'capistrano-rails', group: :development
+# DB backup/restore tool https://github.com/ludicast/yaml_db
+gem 'yaml_db', github: 'jetthoughts/yaml_db', ref: 'fb4b6bd7e12de3cffa93e0a298a1e5253d7e92ba'
 
-# Spree web store
-gem 'spree', '2.2.0'
+gem 'spree', :git => 'https://github.com/spree/spree.git', :branch => '2-2-stable'
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-2-stable'
 gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '2-2-stable'
-gem 'spree_brewbit', :git => 'git@github.com:brewbit/spree_brewbit.git', :branch => 'master'
-gem 'spree_tumblr', :git => 'git@github.com:brewbit/spree_tumblr.git', :branch => 'master'
+gem 'spree_bootstrap_frontend', :git => 'https://github.com/brewbit/spree_bootstrap_frontend.git', :branch => '2-2-stable'
+gem 'spree_brewbit', :path => 'engines/spree_brewbit'
+gem 'spree_tumblr', :path => 'engines/spree_tumblr'
+gem 'spree_brewbit_dashboard', :path => 'engines/spree_brewbit_dashboard'
+
+gem 'better_errors', group: :development
+gem "binding_of_caller", group: :development
+gem 'bullet', group: :development
+

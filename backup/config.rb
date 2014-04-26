@@ -88,6 +88,11 @@ Storage::S3.defaults do |s3|
   s3.secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
 end
 
+Syncer::Cloud::S3.defaults do |s3|
+  s3.access_key_id     = ENV['AWS_ACCESS_KEY_ID']
+  s3.secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
+end
+
 Notifier::Mail.defaults do |mail|
   mail.from                 = 'brewbit@brewbit.com'
   mail.to                   = 'brewbit@brewbit.com'

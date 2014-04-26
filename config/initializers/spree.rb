@@ -18,3 +18,4 @@ Spree.user_class = "Spree::User"
 
 SpreeTumblr::Config.blog_name = 'brewbit'
 SpreeTumblr::Config.api_key = ENV['TUMBLR_API_KEY']
+

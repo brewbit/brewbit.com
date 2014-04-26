@@ -1,0 +1,12 @@
+<div class='row'>
+  <div class='col-sm-7 col-sm-offset-1'>
+    <h2>Temperature Profiles</h2>
+  </div>
+  <div class='col-sm-3'>
+    <%= link_to 'New Temperature Profile', new_temp_profile_path, class: 'btn btn-primary btn-lg pull-right' %>
+  </div>
+</div>
+<div class='row'>
+    <%= render @temp_profiles %>
+</div>
+

@@ -1,0 +1,26 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ *= require spree/frontend/spree_brewbit_dashboard
+ *= require spree/frontend/spree_bootstrap_frontend
+ *= require spree/frontend/flags
+*/
+
+@font-face {
+  font-family: 'HandOfSeanPro-Regular';
+  src: font-url('handofsean.eot');
+  src: font-url('handofsean.eot?#iefix') format('embedded-opentype'),
+       font-url('handofsean.woff') format('woff'),
+       font-url('handofsean.ttf') format('truetype');
+}
+
+#tagline {
+  font-family: HandOfSeanPro-Regular;
+  color: #F05F21;
+  font-size: 65px;
+  font-weight: 500;
+}

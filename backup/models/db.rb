@@ -46,6 +46,23 @@ Model.new(:db, 'Database backup to S3') do
   compress_with Gzip
   
   ##
+  # Sensor readings file sync
+  #
+  sync_with Cloud::S3 do |s3|
+    s3.bucket            = "brewbit_com_readings_#{RAILS_ENV}"
+    s3.path              = "/"
+    s3.mirror            = false
+  
+    s3.directories do |directory|
+      if RAILS_ENV != 'production'
+        directory.add "/var/www/#{RAILS_ENV}.brewbit.com/shared/public/readings"
+      else
+        directory.add "/var/www/brewbit.com/shared/public/readings"
+      end
+    end
+  end
+  
+  ##
   # Mail [Notifier]
   #
   # The default delivery method for Mail Notifiers is 'SMTP'.

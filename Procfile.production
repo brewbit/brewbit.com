@@ -1,1 +1,1 @@
-app:  cd /var/www/brewbit.com/current && ( RAILS_ENV=production RACK_ENV=production /usr/local/rvm/bin/rvm default do bundle exec puma -C /var/www/brewbit.com/shared/puma.rb
+app:  cd /var/www/brewbit.com/current && ( RAILS_ENV=production RACK_ENV=production bundle exec puma -C config/puma.rb )
