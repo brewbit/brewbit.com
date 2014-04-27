@@ -1,0 +1,18 @@
+<div id="mailing-list-signup" class="row">
+	<div class="col-md-4">
+		<h3>Your Email for Our Updates</h3>
+	</div>
+	<div class="col-md-4 email-form">
+		<%= form_tag("/mailinglist/subscribe", method: "post") do %>
+			<div class="input-group">
+				<%= text_field_tag(:email, nil, placeholder: 'Email address please', class: 'form-control') %>
+				<span class="input-group-btn">
+					<%= submit_tag("Sign Up!", class: "btn btn-success") %>
+				</span>
+			</div>
+		<% end %>
+	</div>
+	<div class="col-md-4">
+		<em>No SPAM! - We'll safeguard it in the same vault as our beer recipes</em>
+	</div>
+</div>

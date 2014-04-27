@@ -11,10 +11,72 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140306055554) do
+ActiveRecord::Schema.define(version: 20140426004425) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "api_keys", force: true do |t|
+    t.string   "access_token"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "api_keys", ["access_token"], name: "index_api_keys_on_access_token", using: :btree
+  add_index "api_keys", ["user_id"], name: "index_api_keys_on_user_id", using: :btree
+
+  create_table "device_sessions", force: true do |t|
+    t.integer  "device_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "sensor_index"
+    t.integer  "setpoint_type"
+    t.float    "static_setpoint"
+    t.integer  "temp_profile_id"
+    t.boolean  "active"
+    t.string   "uuid"
+  end
+
+  create_table "devices", force: true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.decimal  "signal_strength"
+    t.string   "hardware_identifier"
+    t.string   "activation_token"
+    t.integer  "output_count"
+    t.integer  "sensor_count"
+    t.integer  "control_mode"
+    t.float    "hysteresis"
+  end
+
+  add_index "devices", ["activation_token"], name: "index_devices_on_activation_token", using: :btree
+  add_index "devices", ["hardware_identifier"], name: "index_devices_on_hardware_identifier", using: :btree
+  add_index "devices", ["user_id"], name: "index_devices_on_user_id", using: :btree
+
+  create_table "firmwares", force: true do |t|
+    t.string   "version"
+    t.integer  "size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.binary   "file"
+  end
+
+  add_index "firmwares", ["version"], name: "index_firmwares_on_version", unique: true, using: :btree
+
+  create_table "output_settings", force: true do |t|
+    t.integer  "device_session_id"
+    t.integer  "function"
+    t.integer  "cycle_delay"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "output_index"
+  end
+
+  add_index "output_settings", ["device_session_id"], name: "index_output_settings_on_device_session_id", using: :btree
 
   create_table "spree_addresses", force: true do |t|
     t.string   "firstname"
@@ -116,7 +178,12 @@ ActiveRecord::Schema.define(version: 20140306055554) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.integer  "user_id"
+    t.integer  "payment_method_id"
   end
+
+  add_index "spree_credit_cards", ["payment_method_id"], name: "index_spree_credit_cards_on_payment_method_id", using: :btree
+  add_index "spree_credit_cards", ["user_id"], name: "index_spree_credit_cards_on_user_id", using: :btree
 
   create_table "spree_gateways", force: true do |t|
     t.string   "type"
@@ -242,6 +309,7 @@ ActiveRecord::Schema.define(version: 20140306055554) do
 
   add_index "spree_orders", ["completed_at"], name: "index_spree_orders_on_completed_at", using: :btree
   add_index "spree_orders", ["number"], name: "index_spree_orders_on_number", using: :btree
+  add_index "spree_orders", ["user_id", "created_by_id"], name: "index_spree_orders_on_user_id_and_created_by_id", using: :btree
   add_index "spree_orders", ["user_id"], name: "index_spree_orders_on_user_id", using: :btree
 
   create_table "spree_orders_promotions", id: false, force: true do |t|
@@ -711,6 +779,7 @@ ActiveRecord::Schema.define(version: 20140306055554) do
     t.datetime "updated_at"
     t.string   "spree_api_key",          limit: 48
     t.datetime "remember_created_at"
+    t.string   "temperature_scale"
   end
 
   add_index "spree_users", ["email"], name: "email_idx_unique", unique: true, using: :btree
@@ -753,5 +822,26 @@ ActiveRecord::Schema.define(version: 20140306055554) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "temp_profile_steps", force: true do |t|
+    t.integer  "duration"
+    t.integer  "step_index"
+    t.integer  "temp_profile_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.float    "value"
+    t.integer  "step_type"
+    t.string   "duration_type"
+  end
+
+  create_table "temp_profiles", force: true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.float    "start_value"
+  end
+
+  add_index "temp_profiles", ["user_id"], name: "index_temp_profiles_on_user_id", using: :btree
 
 end

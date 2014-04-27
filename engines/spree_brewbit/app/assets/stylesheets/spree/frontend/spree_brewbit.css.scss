@@ -1,0 +1,198 @@
+/*
+ *= require spree/frontend
+ */
+
+@import 'spree/frontend/variables';
+
+body {
+  font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+  color: #333;
+  background: image-url("store/bg.png") repeat;
+  font-size: 14px;
+}
+
+/*--------------------------------------*/
+/* Links
+/*--------------------------------------*/
+a {
+  &:hover {
+    color: $link_text_hover_color;
+  }
+}
+
+h5 {
+  font-size: 11px;
+}
+
+.container {
+  padding: 1px;
+  background-color: #fafafa;
+  border: $default_border;
+  border-top: none;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.065);
+  margin-bottom: 25px;
+}
+
+#home-content .row,
+#mailing-list-signup {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.blog-post img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.blog-post h2 {
+  margin-top: 50px;
+}
+
+#mailing-list-signup {
+  margin-top: 25px;
+}
+
+#header {
+	border-bottom: $default_border;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	box-shadow: 0 1px 4px rgba(0,0,0,0.065);
+
+	figure#logo {
+	  img {
+      width: 200px;
+      padding-left: 25px;
+      padding-bottom: 25px;
+    }
+	}
+}
+
+/*--------------------------------------*/
+/* Navigation
+/*--------------------------------------*/
+nav#top-nav-bar {
+  ul {
+    li {
+      a{
+        font-weight: normal;
+        text-transform: none;
+      }
+
+      &#link-to-cart {
+        padding-left: 28px;
+        background: asset-url("spree/frontend/cart.png") no-repeat left center;
+
+        a {
+          .amount {
+            font-weight: bold;
+            border-left: $default_border;
+            padding-left: 5px;
+            padding-bottom: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+nav #main-nav-bar {
+  text-transform: none;
+  font-weight: normal;
+  border-bottom: none;
+  text-align: right;
+}
+
+footer#footer {
+  border-top: $default_border;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  margin: 0;
+
+  #footer-social {
+    text-align: center;
+
+    img {
+      margin: 5px;
+    }
+  }
+
+  #footer-links {
+    text-align: right;
+  }
+
+  div {
+    margin-top: 25px;
+    margin-bottom: 15px;
+  }
+
+  ul {
+    margin: 0;
+  }
+}
+
+/*--------------------------------------*/
+/* Homepage content
+/*--------------------------------------*/
+.hero-unit {
+  background: image-url("store/model-t-render.png") no-repeat left;
+  height: 550px;
+  width: 930px;
+}
+
+a.btn {
+  -moz-box-shadow:inset 0px 1px 0px 0px #cae3fc;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #cae3fc;
+  box-shadow:inset 0px 1px 0px 0px #cae3fc;
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #4197ee) );
+  background:-moz-linear-gradient( center top, #79bbff 5%, #4197ee 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#4197ee');
+  background-color:#79bbff;
+  -webkit-border-top-left-radius:20px;
+  -moz-border-radius-topleft:20px;
+  border-top-left-radius:20px;
+  -webkit-border-top-right-radius:20px;
+  -moz-border-radius-topright:20px;
+  border-top-right-radius:20px;
+  -webkit-border-bottom-right-radius:20px;
+  -moz-border-radius-bottomright:20px;
+  border-bottom-right-radius:20px;
+  -webkit-border-bottom-left-radius:20px;
+  -moz-border-radius-bottomleft:20px;
+  border-bottom-left-radius:20px;
+  text-indent:0;
+  border:1px solid #469df5;
+  display:inline-block;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+  font-weight:bold;
+  font-style:normal;
+  height:65px;
+  line-height:65px;
+  padding-left:25px;
+  padding-right:25px;
+  text-decoration:none;
+  text-align:center;
+  text-shadow:1px 1px 0px #287ace;
+}
+#hero-order:hover {
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #4197ee), color-stop(1, #79bbff) );
+  background:-moz-linear-gradient( center top, #4197ee 5%, #79bbff 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#4197ee', endColorstr='#79bbff');
+  background-color:#4197ee;
+}
+#hero-order:active {
+  position:relative;
+  top:1px;
+}
+
+#call-to-action {
+  margin-top: 200px;
+  margin-left: 25px;
+  text-align: center;
+}
