@@ -80,6 +80,24 @@ body {
   margin-right:0;
 }
 
+.status-header {
+  font-size: 12px;
+  color: gray;
+}
+.status-temp-value {
+  font-size: 36px;
+  font-weight: bold;
+  display: inline;
+}
+.status-temp-scale {
+  font-size: 24px;
+  font-weight: bold;
+  display: inline;
+}
+.status-output {
+  
+}
+
 // -- Spree Layout Custom Rules -------------------------
 
 //TODO, bug #6
