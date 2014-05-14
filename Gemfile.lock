@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: git://github.com/spree/spree_active_shipping
-  revision: 533e916505bb42b8417456999f6ddddd15bb88ec
+  revision: c9d9d446a6e45ee45e7f2640d0607683616fccae
   branch: 2-2-stable
   specs:
     spree_active_shipping (2.2.0)
@@ -40,7 +40,7 @@ GIT
 
 GIT
   remote: https://github.com/spree/spree.git
-  revision: 24883b8409a668fca0dc8c11cad17de11cde511a
+  revision: 1aa53068a5fda093d88c7a61e3a08e6a9d30004e
   branch: 2-2-stable
   specs:
     spree (2.2.2.beta)
@@ -70,6 +70,7 @@ GIT
       cancan (~> 1.6.10)
       deface (~> 1.0.0)
       ffaker (~> 1.16)
+      font-awesome-rails (~> 4.0)
       friendly_id (= 5.0.3)
       highline (~> 1.6.18)
       httparty (~> 0.11)
@@ -94,7 +95,7 @@ GIT
 
 GIT
   remote: https://github.com/spree/spree_auth_devise.git
-  revision: 6469c80cbb8f7bd09fe302c2d0e7fdcb187e38de
+  revision: 4959656be98742249f85879207a606e05d622cc6
   branch: 2-2-stable
   specs:
     spree_auth_devise (2.2.0)
@@ -107,7 +108,7 @@ GIT
 
 GIT
   remote: https://github.com/spree/spree_gateway.git
-  revision: 8d3c09fd63ee61676b5a3b5be37e05b482379db9
+  revision: 46b8610fd1db198410542374536c7cb17263b1a3
   branch: 2-2-stable
   specs:
     spree_gateway (2.2.1)
@@ -151,7 +152,7 @@ GEM
       builder
       i18n
       json (>= 1.5.1)
-    active_utils (2.0.2)
+    active_utils (2.1.1)
       activesupport (>= 2.3.11)
       i18n
     activemerchant (1.42.9)
@@ -180,7 +181,7 @@ GEM
     acts_as_list (0.3.0)
       activerecord (>= 3.0)
     arel (4.0.2)
-    awesome_nested_set (3.0.0.rc.3)
+    awesome_nested_set (3.0.0.rc.5)
       activerecord (>= 4.0.0, < 5)
     aws-sdk (1.27.0)
       json (~> 1.4)
@@ -232,6 +233,8 @@ GEM
     erubis (2.7.0)
     execjs (2.0.2)
     ffaker (1.24.0)
+    font-awesome-rails (4.0.3.2)
+      railties (>= 3.2, < 5.0)
     foreman (0.63.0)
       dotenv (>= 0.7)
       thor (>= 0.13.6)
@@ -266,17 +269,17 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
-    mini_portile (0.5.3)
+    mini_portile (0.6.0)
     minitest (4.7.5)
     monetize (0.3.0)
       money (~> 6.1.0.beta1)
     money (6.1.1)
       i18n (~> 0.6.4)
-    multi_json (1.9.2)
+    multi_json (1.10.0)
     multi_xml (0.5.5)
     nested_form (0.3.2)
-    nokogiri (1.6.1)
-      mini_portile (~> 0.5.0)
+    nokogiri (1.6.2.1)
+      mini_portile (= 0.6.0)
     orm_adapter (0.5.0)
     paperclip (3.4.2)
       activemodel (>= 3.0.0)
