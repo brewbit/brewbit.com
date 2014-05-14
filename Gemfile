@@ -55,7 +55,7 @@ gem 'foreman'
 gem 'yaml_db', github: 'jetthoughts/yaml_db', ref: 'fb4b6bd7e12de3cffa93e0a298a1e5253d7e92ba'
 
 gem 'spree', :git => 'https://github.com/spree/spree.git', :branch => '2-2-stable'
-gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-2-stable'
+gem 'spree_gateway', :git => 'https://github.com/brewbit/spree_gateway.git', :branch => '2-2-stable'
 gem 'spree_active_shipping', :git => "git://github.com/spree/spree_active_shipping", :branch => '2-2-stable'
 gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '2-2-stable'
 gem 'spree_bootstrap_frontend', :git => 'https://github.com/brewbit/spree_bootstrap_frontend.git', :branch => '2-2-stable'
