@@ -33,6 +33,14 @@ GIT
       spree_core (~> 2.2.0)
 
 GIT
+  remote: https://github.com/brewbit/spree_gateway.git
+  revision: 87b9a66f1c5ef301bc6a5e03dc53c00bef2e1806
+  branch: 2-2-stable
+  specs:
+    spree_gateway (2.2.1)
+      spree_core (~> 2.2.0)
+
+GIT
   remote: https://github.com/jmcnevin/dygraphs-rails.git
   revision: a94d01d8e3ee97ad71d6704d86512774b34986a8
   specs:
@@ -104,14 +112,6 @@ GIT
       devise-encryptable (= 0.1.2)
       json
       multi_json
-      spree_core (~> 2.2.0)
-
-GIT
-  remote: https://github.com/spree/spree_gateway.git
-  revision: 46b8610fd1db198410542374536c7cb17263b1a3
-  branch: 2-2-stable
-  specs:
-    spree_gateway (2.2.1)
       spree_core (~> 2.2.0)
 
 PATH
