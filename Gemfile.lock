@@ -127,6 +127,7 @@ PATH
       beefcake
       nested_form
       spree_core (~> 2.2.0)
+      zeroclipboard-rails
 
 PATH
   remote: engines/spree_tumblr
@@ -364,6 +365,8 @@ GEM
       tzinfo
     warden (1.2.3)
       rack (>= 1.0)
+    zeroclipboard-rails (0.0.13)
+      railties (>= 3.1)
 
 PLATFORMS
   ruby
