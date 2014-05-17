@@ -24,7 +24,7 @@ GIT
 
 GIT
   remote: https://github.com/brewbit/brewbit-dashboard.git
-  revision: 163f67230f4feffceef795a5529e1c0d9b31cbf0
+  revision: 3d0d0d3da619b503172d8890c1e0a48483bcd8bd
   branch: master
   specs:
     brewbit_dashboard (2.2.0)
@@ -130,6 +130,12 @@ PATH
   specs:
     spree_brewbit (2.2.0)
       spree_core (~> 2.2.0)
+
+PATH
+  remote: engines/spree_discourse
+  specs:
+    spree_discourse (2.2.2.beta)
+      spree_core (~> 2.2.2.beta)
 
 PATH
   remote: engines/spree_tumblr
@@ -396,6 +402,7 @@ DEPENDENCIES
   spree_auth_devise!
   spree_bootstrap_frontend!
   spree_brewbit!
+  spree_discourse!
   spree_gateway!
   spree_tumblr!
   therubyracer
