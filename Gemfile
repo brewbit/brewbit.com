@@ -61,7 +61,7 @@ gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git
 gem 'spree_bootstrap_frontend', :git => 'https://github.com/brewbit/spree_bootstrap_frontend.git', :branch => '2-2-stable'
 gem 'spree_brewbit', :path => 'engines/spree_brewbit'
 gem 'spree_tumblr', :path => 'engines/spree_tumblr'
-gem 'spree_brewbit_dashboard', :git => 'https://github.com/brewbit/brewbit-dashboard.git', :branch => 'master'
+gem 'brewbit_dashboard', :git => 'https://github.com/brewbit/brewbit-dashboard.git', :branch => 'master'
 
 gem 'better_errors', group: :development
 gem "binding_of_caller", group: :development

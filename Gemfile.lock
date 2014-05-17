@@ -27,7 +27,7 @@ GIT
   revision: 163f67230f4feffceef795a5529e1c0d9b31cbf0
   branch: master
   specs:
-    spree_brewbit_dashboard (2.2.0)
+    brewbit_dashboard (2.2.0)
       beefcake
       nested_form
       spree_core (~> 2.2.0)
@@ -377,6 +377,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass!
+  brewbit_dashboard!
   bullet
   coffee-rails (~> 4.0.0)
   dotenv-rails
@@ -395,7 +396,6 @@ DEPENDENCIES
   spree_auth_devise!
   spree_bootstrap_frontend!
   spree_brewbit!
-  spree_brewbit_dashboard!
   spree_gateway!
   spree_tumblr!
   therubyracer
