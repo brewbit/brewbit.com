@@ -23,6 +23,17 @@ GIT
       sass (~> 3.2)
 
 GIT
+  remote: https://github.com/brewbit/brewbit-dashboard.git
+  revision: c8b7dae6cd9c39967d9fd4db798cf1e4abda691b
+  branch: master
+  specs:
+    brewbit_dashboard (2.2.0)
+      beefcake
+      nested_form
+      spree_core (~> 2.2.0)
+      zeroclipboard-rails
+
+GIT
   remote: https://github.com/brewbit/spree_bootstrap_frontend.git
   revision: d4100caa9995eec27e9682f44dc3edd793ce69a9
   branch: 2-2-stable
@@ -121,13 +132,10 @@ PATH
       spree_core (~> 2.2.0)
 
 PATH
-  remote: engines/spree_brewbit_dashboard
+  remote: engines/spree_discourse
   specs:
-    spree_brewbit_dashboard (2.2.0)
-      beefcake
-      nested_form
-      spree_core (~> 2.2.0)
-      zeroclipboard-rails
+    spree_discourse (2.2.2.beta)
+      spree_core (~> 2.2.2.beta)
 
 PATH
   remote: engines/spree_tumblr
@@ -375,6 +383,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass!
+  brewbit_dashboard!
   bullet
   coffee-rails (~> 4.0.0)
   dotenv-rails
@@ -393,7 +402,7 @@ DEPENDENCIES
   spree_auth_devise!
   spree_bootstrap_frontend!
   spree_brewbit!
-  spree_brewbit_dashboard!
+  spree_discourse!
   spree_gateway!
   spree_tumblr!
   therubyracer
