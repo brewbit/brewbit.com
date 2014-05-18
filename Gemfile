@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 #ruby-gemset=brewbit-spree
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.4'
+gem 'rails', '4.0.5'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
