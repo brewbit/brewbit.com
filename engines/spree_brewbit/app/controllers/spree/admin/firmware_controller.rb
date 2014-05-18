@@ -1,4 +1,4 @@
-module Brewbit
+module Spree
   module Admin
     class FirmwareController < Spree::Admin::BaseController
 

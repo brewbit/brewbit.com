@@ -6,7 +6,7 @@
 # * id [integer, primary, not null] - primary key
 # * created_at [datetime, not null] - creation time
 # * updated_at [datetime, not null] - last update time
-module Brewbit
+module Spree
   class Firmware < ActiveRecord::Base
 
     self.table_name = 'firmwares'

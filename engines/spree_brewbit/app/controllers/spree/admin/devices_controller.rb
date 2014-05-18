@@ -1,6 +1,6 @@
 require 'device'
 
-module Brewbit
+module Spree
   module Admin
     class DevicesController < Spree::Admin::BaseController
 
