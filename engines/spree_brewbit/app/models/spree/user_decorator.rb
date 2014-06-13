@@ -1,8 +1,8 @@
 module Spree
   User.class_eval do
 
-    after_create :set_default_role
-    after_create :set_default_temperature_scale
+    before_create :set_default_role
+    before_create :set_default_temperature_scale
 
     has_many :devices, dependent: :destroy, class_name: "Device"
     has_many :api_keys, dependent: :destroy, class_name: "ApiKey"
