@@ -12,7 +12,23 @@
 <% end %>
 
 <% content_for :table_filter do %>
-  <%= render :partial => 'spree/admin/shared/report_order_criteria', :locals => {} %>
+  <%= search_form_for @search, :url => spree.ca_sales_total_admin_reports_path  do |s| %>
+    <div class="date-range-filter field align-center">
+        <%= label_tag nil, Spree.t(:start), :class => 'inline' %>
+        <%= s.text_field :completed_at_gt, :class => 'datepicker datepicker-from', :value => datepicker_field_value(params[:q][:completed_at_gt]) %>
+        
+        <span class="range-divider">
+          <i class="fa fa-arrow-right"></i>
+        </span>
+
+        <%= s.text_field :completed_at_lt, :class => 'datepicker datepicker-to', :value => datepicker_field_value(params[:q][:completed_at_lt]) %>
+        <%= label_tag nil, Spree.t(:end), :class => 'inline' %>
+    </div>
+
+    <div class="actions filter-actions">
+      <%= button Spree.t(:search), 'search'  %>
+    </div>
+  <% end %>
 <% end %>
 
 <table class="admin-report" data-hook="ca_sales_total">
