@@ -18,7 +18,7 @@ module Spree
     
         params[:q][:billing_address_state_name] = 'California'
         @search = Order.complete.ransack(params[:q])
-        @orders = @search.result.includes(:billing_address)
+        @orders = @search.result.includes(:bill_address)
     
         @totals = {}
         @orders.each do |order|
