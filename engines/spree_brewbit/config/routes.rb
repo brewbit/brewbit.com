@@ -9,5 +9,12 @@ Spree::Core::Engine.routes.draw do
     end
 
     resources :devices, only: :index
+    
+    resources :reports do
+      collection do
+        get :ca_sales_total
+        post :ca_sales_total
+      end
+    end
   end
 end
