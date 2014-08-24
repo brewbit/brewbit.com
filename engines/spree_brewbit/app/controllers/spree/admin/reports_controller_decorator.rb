@@ -16,22 +16,18 @@ module Spree
     
         params[:q][:s] ||= "completed_at desc"
     
-        params[:q][:bill_address_state_name] = 'California'
         @search = Order.complete.ransack(params[:q])
-        @orders = @search.result.includes(:bill_address)
+        @orders = @search.result
     
         @totals = {}
         @orders.each do |order|
-          @totals[order.currency] = { :item_total => ::Money.new(0, order.currency), :adjustment_total => ::Money.new(0, order.currency), :sales_total => ::Money.new(0, order.currency) } unless @totals[order.currency]
-          @totals[order.currency][:item_total] += order.display_item_total.money
-          @totals[order.currency][:adjustment_total] += order.display_adjustment_total.money
-          @totals[order.currency][:sales_total] += order.display_total.money
+          if order.bill_address.state.abbr == 'CA'
+            @totals[order.currency] = { :item_total => ::Money.new(0, order.currency), :adjustment_total => ::Money.new(0, order.currency), :sales_total => ::Money.new(0, order.currency) } unless @totals[order.currency]
+            @totals[order.currency][:item_total] += order.display_item_total.money
+            @totals[order.currency][:adjustment_total] += order.display_adjustment_total.money
+            @totals[order.currency][:sales_total] += order.display_total.money
+          end
         end
-        
-        
-        
-        
-        #Spree::Order.complete.joins(:billing_address).where("state_name = 'California'")
       end
     end    
   end
