@@ -16,7 +16,7 @@ module Spree
     
         params[:q][:s] ||= "completed_at desc"
     
-        params[:q][:billing_address_state_name] = 'California'
+        params[:q][:bill_address_state_name] = 'California'
         @search = Order.complete.ransack(params[:q])
         @orders = @search.result.includes(:bill_address)
     
