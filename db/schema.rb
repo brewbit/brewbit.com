@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150120044863) do
+ActiveRecord::Schema.define(version: 20150125075611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20150120044863) do
     t.float    "last_reading"
     t.float    "last_setpoint"
     t.string   "access_token"
+    t.integer  "temp_profile_completion_action"
   end
 
   create_table "devices", force: true do |t|
