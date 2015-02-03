@@ -24,7 +24,7 @@ GIT
 
 GIT
   remote: https://github.com/brewbit/brewbit-dashboard.git
-  revision: e8991459c66c90955ee18cabd11aa7b91ef78d16
+  revision: b77f97e7199dea8551faff5cd6d26518902a42df
   branch: master
   specs:
     brewbit_dashboard (2.2.0)
@@ -297,7 +297,7 @@ GEM
       mime-types
     paranoia (2.0.4)
       activerecord (~> 4.0)
-    pg (0.18.1)
+    pg (0.17.1)
     polyamorous (0.6.4)
       activerecord (>= 3.0)
     polyglot (0.3.5)
@@ -388,7 +388,7 @@ DEPENDENCIES
   gibbon
   jbuilder (~> 1.2)
   jquery-rails (~> 3.1.0)
-  pg
+  pg (= 0.17.1)
   puma (= 2.8.1)
   rabl
   rails (= 4.0.12)
