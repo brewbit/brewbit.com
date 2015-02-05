@@ -24,12 +24,19 @@ GIT
 
 GIT
   remote: https://github.com/brewbit/brewbit-dashboard.git
-  revision: faf386446bbc8f652bb7c512ac7f0f92336394ec
+  revision: b54bee3e7995e6fbdcc801effa41ea35431d7d6c
   branch: master
   specs:
     brewbit_dashboard (2.2.0)
       nested_form
       zeroclipboard-rails
+
+GIT
+  remote: https://github.com/brewbit/dygraphs-rails.git
+  revision: 0efaea0583a9b18b22a6107409599d004802a2b5
+  branch: master
+  specs:
+    dygraphs-rails (1.1.0)
 
 GIT
   remote: https://github.com/brewbit/spree_bootstrap_frontend.git
@@ -40,12 +47,6 @@ GIT
       bootstrap-sass (~> 3.1.0)
       kaminari-bootstrap (~> 3.0.1)
       spree_core (~> 2.2.0)
-
-GIT
-  remote: https://github.com/jmcnevin/dygraphs-rails.git
-  revision: a94d01d8e3ee97ad71d6704d86512774b34986a8
-  specs:
-    dygraphs-rails (1.0.1)
 
 GIT
   remote: https://github.com/spree/spree.git
@@ -189,6 +190,11 @@ GEM
     acts_as_list (0.3.0)
       activerecord (>= 3.0)
     arel (4.0.2)
+    audited (4.0.0)
+      rails-observers (~> 0.1.2)
+    audited-activerecord (4.0.0)
+      activerecord (~> 4.0)
+      audited (= 4.0.0)
     awesome_nested_set (3.0.2)
       activerecord (>= 4.0.0, < 5)
     aws-sdk (1.27.0)
@@ -203,9 +209,6 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.1.4)
-    bullet (4.14.1)
-      activesupport (>= 3.0.0)
-      uniform_notifier (>= 1.6.0)
     cancan (1.6.10)
     canonical-rails (0.0.7)
       rails (>= 3.1, < 5.0)
@@ -316,6 +319,8 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.0.12)
       sprockets-rails (~> 2.0)
+    rails-observers (0.1.2)
+      activemodel (~> 4.0)
     railties (4.0.12)
       actionpack (= 4.0.12)
       activesupport (= 4.0.12)
@@ -360,7 +365,6 @@ GEM
     uglifier (2.7.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    uniform_notifier (1.6.2)
     uuidtools (2.1.5)
     versioncake (1.2.0)
       actionpack (>= 3.2)
@@ -376,11 +380,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  audited-activerecord (~> 4.0)
   better_errors
   binding_of_caller
   bootstrap-sass!
   brewbit_dashboard!
-  bullet
   coffee-rails (~> 4.0.0)
   dotenv-rails
   dygraphs-rails!

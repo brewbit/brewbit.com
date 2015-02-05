@@ -43,13 +43,16 @@ gem 'dotenv-rails'
 gem 'bootstrap-sass', :git => 'https://github.com/brewbit/bootstrap-sass.git', :branch => 'master'
 
 # dygraphs JavaScript Visualization Library packaged for the Rails asset pipeline
-gem 'dygraphs-rails', :git => 'https://github.com/jmcnevin/dygraphs-rails.git'
+gem 'dygraphs-rails', :git => 'https://github.com/brewbit/dygraphs-rails.git', :branch => 'master'
 
 # General ruby templating with json, bson, xml, plist and msgpack support https://github.com/nesquena/rabl
 gem 'rabl'
 
 # Manage Procfile-based applications http://ddollar.github.com/foreman
 gem 'foreman'
+
+# Audited is an ORM extension that logs all changes to your Rails models. https://github.com/collectiveidea/audited
+gem "audited-activerecord", "~> 4.0"
 
 # DB backup/restore tool https://github.com/ludicast/yaml_db
 gem 'yaml_db', github: 'jetthoughts/yaml_db', ref: 'fb4b6bd7e12de3cffa93e0a298a1e5253d7e92ba'
@@ -66,5 +69,4 @@ gem 'brewbit_dashboard', :git => 'https://github.com/brewbit/brewbit-dashboard.g
 
 gem 'better_errors', group: :development
 gem "binding_of_caller", group: :development
-gem 'bullet', group: :development
 

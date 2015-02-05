@@ -2,12 +2,6 @@ module Spree
   module Admin
     class FirmwareController < Spree::Admin::BaseController
 
-      class FirmwareParams
-        def self.build( params )
-          params.require( :firmware ).permit( :version, :file, :channel )
-        end
-      end
-
       def index
         @firmware_list = Spree::Firmware.order( 'version DESC' )
       end
@@ -18,13 +12,10 @@ module Spree
 
       def create
         if params[:firmware][:file]
-          file = params[:firmware][:file]
-          params[:firmware].delete :file
+          params[:firmware][:file] = params[:firmware][:file].read
         end
 
-        @firmware = Spree::Firmware.new( FirmwareParams.build(params) ) do |t|
-          t.file = file.read if file
-        end
+        @firmware = Spree::Firmware.new( firmware_params )
 
         if @firmware.save
           redirect_to admin_firmware_index_path
@@ -45,6 +36,10 @@ module Spree
       end
 
       private
+
+      def firmware_params
+        params.require( :firmware ).permit( :version, :file, :channel )
+      end
 
       def file_name
         "app_mt_update-#{@firmware.version}.bin"
