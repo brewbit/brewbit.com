@@ -24,7 +24,7 @@ GIT
 
 GIT
   remote: https://github.com/brewbit/brewbit-dashboard.git
-  revision: 88c69b6aad429aa0b28404374e4f2dd9ba81db14
+  revision: 42b7bec15e4dd543a2085d761a1755c106b2a256
   branch: master
   specs:
     brewbit_dashboard (2.2.0)
@@ -33,7 +33,7 @@ GIT
 
 GIT
   remote: https://github.com/brewbit/dygraphs-rails.git
-  revision: 0efaea0583a9b18b22a6107409599d004802a2b5
+  revision: f7d3eeef59d105186ddaf33138d59fd84528d9bf
   branch: master
   specs:
     dygraphs-rails (1.1.0)
