@@ -51,6 +51,9 @@ gem 'rabl'
 # Manage Procfile-based applications http://ddollar.github.com/foreman
 gem 'foreman'
 
+# Cron jobs in Ruby https://github.com/javan/whenever
+gem 'whenever', :require => false
+
 # DB backup/restore tool https://github.com/ludicast/yaml_db
 gem 'yaml_db', github: 'jetthoughts/yaml_db', ref: 'fb4b6bd7e12de3cffa93e0a298a1e5253d7e92ba'
 
