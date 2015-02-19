@@ -24,7 +24,7 @@ GIT
 
 GIT
   remote: https://github.com/brewbit/brewbit-dashboard.git
-  revision: c753564be5b9288cfa41cbb4cbabb29f934eec9f
+  revision: cdcb5517f5705965e945941273d263d5a5906d4a
   branch: master
   specs:
     brewbit_dashboard (2.2.0)
