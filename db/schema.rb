@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150214182942) do
+ActiveRecord::Schema.define(version: 20150219063113) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20150214182942) do
     t.integer  "control_mode"
     t.float    "hysteresis"
     t.string   "update_channel",      default: "stable"
+    t.string   "firmware_version"
   end
 
   add_index "devices", ["activation_token"], name: "index_devices_on_activation_token", using: :btree
