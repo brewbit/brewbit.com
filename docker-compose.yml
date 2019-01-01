@@ -1,0 +1,30 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=brewbit
+      - POSTGRES_PASSWORD=brewbit
+#     volumes:
+#       - ./tmp/db:/var/lib/postgresql/data
+  web:
+    build: .
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    environment:
+      - BREWBIT_DEVICE_GATEWAY_API_URL=http://dg:10080
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+  dg:
+    build: ../brewbit-device-server
+    command: bundle exec ./server.rb
+    environment:
+      - BREWBIT_API_HOST=web:3000
+    ports:
+      - "10080:10080"
+      - "31337:31337"
+    depends_on:
+      - web
