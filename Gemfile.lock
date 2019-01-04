@@ -1,20 +1,4 @@
 GIT
-  remote: git://github.com/jetthoughts/yaml_db.git
-  revision: fb4b6bd7e12de3cffa93e0a298a1e5253d7e92ba
-  ref: fb4b6bd7e12de3cffa93e0a298a1e5253d7e92ba
-  specs:
-    yaml_db (0.2.3)
-
-GIT
-  remote: git://github.com/spree/spree_active_shipping
-  revision: f99ded1e36ebfaa8ad38a9e9883ab4ecebfe482a
-  branch: 2-2-stable
-  specs:
-    spree_active_shipping (2.2.0)
-      active_shipping (~> 0.12.0)
-      spree_core (~> 2.2.0)
-
-GIT
   remote: https://github.com/brewbit/bootstrap-sass.git
   revision: 4f65a8222866d0069f25efd447878cba7f09eb5b
   branch: master
@@ -24,7 +8,7 @@ GIT
 
 GIT
   remote: https://github.com/brewbit/brewbit-dashboard.git
-  revision: c8ce23f8450a8c5d65323a19efea5bdf5bcc3a62
+  revision: 1d920be2d2794a4ec9f0bc70932943366b8ed125
   branch: master
   specs:
     brewbit_dashboard (2.2.0)
@@ -47,6 +31,13 @@ GIT
       bootstrap-sass (~> 3.1.0)
       kaminari-bootstrap (~> 3.0.1)
       spree_core (~> 2.2.0)
+
+GIT
+  remote: https://github.com/jetthoughts/yaml_db
+  revision: fb4b6bd7e12de3cffa93e0a298a1e5253d7e92ba
+  ref: fb4b6bd7e12de3cffa93e0a298a1e5253d7e92ba
+  specs:
+    yaml_db (0.2.3)
 
 GIT
   remote: https://github.com/spree/spree.git
@@ -105,6 +96,15 @@ GIT
       spree_core (= 2.2.10.beta)
 
 GIT
+  remote: https://github.com/spree/spree_active_shipping
+  revision: fed2733027c2c66039cd1b4866c0ca910a849207
+  branch: 2-2-stable
+  specs:
+    spree_active_shipping (2.2.0)
+      active_shipping (~> 0.12.0)
+      spree_core (~> 2.2.0)
+
+GIT
   remote: https://github.com/spree/spree_auth_devise.git
   revision: 01901766a2562026e2f3eb523a3f0f9bea8ae31e
   branch: 2-2-stable
@@ -155,7 +155,7 @@ GEM
       erubis (~> 2.7.0)
       rack (~> 1.5.2)
       rack-test (~> 0.6.2)
-    active_shipping (0.12.5)
+    active_shipping (0.12.6)
       active_utils (~> 2.2.0)
       activesupport (>= 2.3.5)
       builder
@@ -282,7 +282,7 @@ GEM
       money (~> 6.5.0)
     money (6.5.0)
       i18n (>= 0.6.4, <= 0.7.0)
-    multi_json (1.10.1)
+    multi_json (1.13.1)
     multi_xml (0.5.5)
     nested_form (0.3.2)
     nokogiri (1.6.5)
@@ -304,7 +304,7 @@ GEM
       rack (>= 1.1, < 2.0)
     rabl (0.9.3)
       activesupport (>= 2.3.14)
-    rack (1.5.2)
+    rack (1.5.5)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.0.12)
@@ -320,7 +320,7 @@ GEM
       activesupport (= 4.0.12)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    rake (10.4.2)
+    rake (12.3.2)
     ransack (1.1.0)
       actionpack (>= 3.0)
       activerecord (>= 3.0)
@@ -349,13 +349,13 @@ GEM
     therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
       ref
-    thor (0.19.1)
-    thread_safe (0.3.4)
+    thor (0.19.4)
+    thread_safe (0.3.6)
     tilt (1.4.1)
     truncate_html (0.9.2)
     turbolinks (2.5.3)
       coffee-rails
-    tzinfo (0.3.42)
+    tzinfo (0.3.55)
     uglifier (2.7.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
@@ -369,7 +369,7 @@ GEM
       rack (>= 1.0)
     whenever (0.9.4)
       chronic (>= 0.6.3)
-    zeroclipboard-rails (0.1.0)
+    zeroclipboard-rails (0.1.2)
       railties (>= 3.1)
 
 PLATFORMS
@@ -405,3 +405,6 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   whenever
   yaml_db!
+
+BUNDLED WITH
+   1.17.3
